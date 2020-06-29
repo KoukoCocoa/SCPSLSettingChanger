@@ -50,77 +50,74 @@ namespace SCPSLSettingChanger
         {
             if (Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SCP Secret Laboratory")))
             {
-                StreamWriter writer = new StreamWriter(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SCP Secret Laboratory", "registry.txt"));
-                writer.WriteLine($"06gammavalue::-%(|::{double.Parse(TBOX_Brightness.Text) * 0.02}");
-                if ((double.Parse(TBOX_Sensitivty.Text) * 0.03) >= 0.1)
-                    writer.WriteLine($"06Sens::-%(|::{double.Parse(TBOX_Sensitivty.Text) * 0.03}");
+                PlayerPrefsSl.Set("gammavalue", float.Parse(TBOX_Brightness.Text) * 0.02f);
+                if ((float.Parse(TBOX_Sensitivty.Text) * 0.03f) >= 0.1f)
+                    PlayerPrefsSl.Set("Sens", float.Parse(TBOX_Sensitivty.Text) * 0.03f);
                 else
-                    writer.WriteLine($"06Sens::-%(|::0.1");
-                writer.WriteLine($"00y_invert::-%(|::{CHK_InvertYAxisChoice.Checked.ToString().ToLower()}");
-                writer.WriteLine($"07SavedResolutionSet::-%(|::{CBOX_ScreenResolution.SelectedIndex}");
-                writer.WriteLine($"07ScreenMode::-%(|::{CBOX_WindowMode.SelectedIndex}");
+                    PlayerPrefsSl.Set("Sens", 0.1f);
+                PlayerPrefsSl.Set("y_invert", CHK_InvertYAxisChoice.Checked);
+                PlayerPrefsSl.Set("SavedResolutionSet", CBOX_ScreenResolution.SelectedIndex);
+                PlayerPrefsSl.Set("ScreenMode", CBOX_WindowMode.SelectedIndex);
                 if (CHK_VSync.Checked)
                 {
-                    writer.WriteLine($"00gfxsets_vsync::-%(|::{CHK_VSync.Checked.ToString().ToLower()}");
-                    writer.WriteLine($"07MaxFramerate::-%(|::-1");
+                    PlayerPrefsSl.Set("gfxsets_vsync", CHK_VSync.Checked);
+                    PlayerPrefsSl.Set("MaxFramerate", -1);
                 }
                 else
                 {
-                    writer.WriteLine($"00gfxsets_vsync::-%(|::{CHK_VSync.Checked.ToString().ToLower()}");
-                    writer.WriteLine($"07MaxFramerate::-%(|::{Framerates[CBOX_FPSLimit.SelectedIndex]}");
+                    PlayerPrefsSl.Set("gfxsets_vsync", CHK_VSync.Checked);
+                    PlayerPrefsSl.Set("MaxFramerate", Framerates[CBOX_FPSLimit.SelectedIndex]);
                 }
-                writer.WriteLine($"07gfxsets_textures::-%(|::{CBOX_TextureQuality.SelectedIndex}");
-                writer.WriteLine($"07gfxsets_maxblood::-%(|::{CBOX_MaxBlood.SelectedIndex}");
-                if (CHK_Shadows.Checked)
-                {
-                    writer.WriteLine($"00gfxsets_shadows::-%(|::{CHK_Shadows.Checked.ToString().ToLower()}");
-                    writer.WriteLine($"07gfxsets_shadres::-%(|::{CBOX_ShadowResolution.SelectedIndex}");
-                    writer.WriteLine($"07gfxsets_shaddis_new::-%(|::{CBOX_ShadowDistance.SelectedIndex}");
+                PlayerPrefsSl.Set("gfxsets_textures", CBOX_TextureQuality.SelectedIndex);
+                PlayerPrefsSl.Set("gfxsets_maxblood", CBOX_MaxBlood.SelectedIndex);
+                if (CHK_Shadows.Checked) {
+                    PlayerPrefsSl.Set("gfxsets_shadows", CHK_Shadows.Checked);
+                    PlayerPrefsSl.Set("gfxsets_shadres", CBOX_ShadowResolution.SelectedIndex);
+                    PlayerPrefsSl.Set("gfxsets_shaddis_new", CBOX_ShadowDistance.SelectedIndex);
                 }
                 else
-                    writer.WriteLine($"00gfxsets_shadows::-%(|::{CHK_Shadows.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00gfxsets_mb::-%(|::{CHK_MotionBlur.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00gfxsets_cc::-%(|::{CHK_ColorCorrection.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00gfxsets_aa::-%(|::{CHK_AntiAliasing.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00gfxsets_hp::-%(|::{CHK_LightRenderingMode.Checked.ToString().ToLower()}");
-                writer.WriteLine($"06AudioSettings_Master::-%(|::{double.Parse(TBOX_MasterVolumeValue.Text) * 0.01}");
-                writer.WriteLine($"06AudioSettings_Effects::-%(|::{double.Parse(TBOX_SoundEffectsVolume.Text) * 0.01}");
-                writer.WriteLine($"06AudioSettings_VoiceChat::-%(|::{double.Parse(TBOX_VoiceChatValue.Text) * 0.01}");
-                writer.WriteLine($"06AudioSettings_MenuMusic::-%(|::{double.Parse(TBOX_MenuMusicValue.Text) * 0.01}");
-                writer.WriteLine($"06AudioSettings_Interface::-%(|::{double.Parse(TBOX_InterfaceVolumeValue.Text) * 0.01}");
-                writer.WriteLine($"07MenuTheme::-%(|::{CBOX_MenuMusicTheme.SelectedIndex}");
-                writer.WriteLine($"00MaintainSliderProportions::-%(|::{CHK_SameMenuAndInterface.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00ClassIntroFastFade::-%(|::{CHK_FastIntroFade.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00HeadBob::-%(|::{CHK_HeadBob.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00ToggleSprint::-%(|::{CHK_ToggleSprint.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00HealthBarShowsExact::-%(|::{CHK_DisplayExactHPValue.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00RichPresence::-%(|::{CHK_RichPresence.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00PublicLobby::-%(|::{CHK_PublicLobby.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00HideIP::-%(|::{CHK_HideIP.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00ToggleSearch::-%(|::{CHK_ToggleSearch.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00ModeSwitchSetting079::-%(|{CHK_SCP079ToggleView.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00PostProcessing079::-%(|::{CHK_SCP079EnablePostProcessing.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00translation_changed::-%(|::true");
-                writer.WriteLine($"13translation_path::-%(|::{LanguageValues[CBOX_LanguageOptions.SelectedIndex]}");
-                writer.WriteLine($"07menumode::-%(|::{CBOX_MenuOptions.SelectedIndex}");
-                writer.WriteLine($"00DisplaySteamProfile::-%(|::{CHK_DisplaySteamProfile.Checked.ToString().ToLower()}");
-                writer.WriteLine($"00DNT::-%(|::{CHK_DoNotTrack.Checked.ToString().ToLower()}");
-                writer.WriteLine($"07W_2_0::-%(|::{CBOX_E11Sight.SelectedIndex}");
-                writer.WriteLine($"07W_2_1::-%(|::{CBOX_E11Barrel.SelectedIndex}");
-                writer.WriteLine($"07W_2_2::-%(|::{CBOX_E11Other.SelectedIndex}");
-                writer.WriteLine($"07W_1_0::-%(|::{CBOX_Project90Sight.SelectedIndex}");
-                writer.WriteLine($"07W_1_1::-%(|::{CBOX_Project90Barrel.SelectedIndex}");
-                writer.WriteLine($"07W_1_2::-%(|::{CBOX_Project90Other.SelectedIndex}");
-                writer.WriteLine($"07W_3_0::-%(|::{CBOX_MP7Sight.SelectedIndex}");
-                writer.WriteLine($"07W_3_1::-%(|::{CBOX_MP7Barrel.SelectedIndex}");
-                writer.WriteLine($"07W_3_2::-%(|::{CBOX_MP7Other.SelectedIndex}");
-                writer.WriteLine($"07W_5_0::-%(|::{CBOX_USPSight.SelectedIndex}");
-                writer.WriteLine($"07W_5_1::-%(|::{CBOX_USPBarrel.SelectedIndex}");
-                writer.WriteLine($"07W_5_2::-%(|::{CBOX_USPOther.SelectedIndex}");
-                writer.WriteLine($"07W_0_0::-%(|::{CBOX_COM15Sight.SelectedIndex}");
-                writer.WriteLine($"07W_0_1::-%(|::{CBOX_COM15Barrel.SelectedIndex}");
-                writer.WriteLine($"07W_0_2::-%(|::{CBOX_COM15Other.SelectedIndex}");
-                writer.Dispose();
+                    PlayerPrefsSl.Set("gfxsets_shadows", CHK_Shadows.Checked);
+                PlayerPrefsSl.Set("gfxsets_mb", CHK_VSync.Checked);
+                PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked);
+                PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked);
+                PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked);
+                PlayerPrefsSl.Set("AudioSettings_Master", float.Parse(TBOX_MasterVolumeValue.Text) * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_Effects", float.Parse(TBOX_SoundEffectsVolume.Text) * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_VoiceChat", float.Parse(TBOX_VoiceChatValue.Text) * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_MenuMusic", float.Parse(TBOX_MenuMusicValue.Text) * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_Interface", float.Parse(TBOX_InterfaceVolumeValue.Text) * 0.01f);
+                PlayerPrefsSl.Set("MenuTheme", CBOX_MenuMusicTheme.SelectedIndex);
+                PlayerPrefsSl.Set("MaintainSliderProportions", CHK_SameMenuAndInterface.Checked);
+                PlayerPrefsSl.Set("ClassIntroFastFade", CHK_FastIntroFade.Checked);
+                PlayerPrefsSl.Set("HeadBob", CHK_HeadBob.Checked);
+                PlayerPrefsSl.Set("ToggleSprint", CHK_ToggleSprint.Checked);
+                PlayerPrefsSl.Set("HealthBarShowsExact", CHK_DisplayExactHPValue.Checked);
+                PlayerPrefsSl.Set("RichPresence", CHK_RichPresence.Checked);
+                PlayerPrefsSl.Set("PublicLobby", CHK_PublicLobby.Checked);
+                PlayerPrefsSl.Set("HideIP", CHK_HideIP.Checked);
+                PlayerPrefsSl.Set("ToggleSearch", CHK_ToggleSearch.Checked);
+                PlayerPrefsSl.Set("ModeSwitchSetting079", CHK_SCP079ToggleView.Checked);
+                PlayerPrefsSl.Set("PostProcessing079", CHK_SCP079EnablePostProcessing.Checked);
+                PlayerPrefsSl.Set("translation_changed", true);
+                PlayerPrefsSl.Set("translation_path", LanguageValues[CBOX_LanguageOptions.SelectedIndex]);
+                PlayerPrefsSl.Set("menumode", CBOX_MenuOptions.SelectedIndex);
+                PlayerPrefsSl.Set("DisplaySteamProfile", CHK_DisplaySteamProfile.Checked);
+                PlayerPrefsSl.Set("DNT", CHK_DoNotTrack.Checked);
+                PlayerPrefsSl.Set("W_2_0", CBOX_E11Sight.SelectedIndex);
+                PlayerPrefsSl.Set("W_2_1", CBOX_E11Barrel.SelectedIndex);
+                PlayerPrefsSl.Set("W_2_2", CBOX_E11Other.SelectedIndex);
+                PlayerPrefsSl.Set("W_1_0", CBOX_Project90Sight.SelectedIndex);
+                PlayerPrefsSl.Set("W_1_1", CBOX_Project90Barrel.SelectedIndex);
+                PlayerPrefsSl.Set("W_1_2", CBOX_Project90Other.SelectedIndex);
+                PlayerPrefsSl.Set("W_3_0", CBOX_MP7Sight.SelectedIndex);
+                PlayerPrefsSl.Set("W_3_1", CBOX_MP7Barrel.SelectedIndex);
+                PlayerPrefsSl.Set("W_3_2", CBOX_MP7Other.SelectedIndex);
+                PlayerPrefsSl.Set("W_5_0", CBOX_USPSight.SelectedIndex);
+                PlayerPrefsSl.Set("W_5_1", CBOX_USPBarrel.SelectedIndex); 
+                PlayerPrefsSl.Set("W_5_2", CBOX_USPOther.SelectedIndex);
+                PlayerPrefsSl.Set("W_0_0", CBOX_COM15Sight.SelectedIndex);
+                PlayerPrefsSl.Set("W_0_1", CBOX_COM15Barrel.SelectedIndex);
+                PlayerPrefsSl.Set("W_0_2", CBOX_COM15Other.SelectedIndex);
                 MessageBox.Show("SCP:SL game settings have been changed now!", "Successfully written new file", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
