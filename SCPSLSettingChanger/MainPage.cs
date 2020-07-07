@@ -244,37 +244,51 @@ namespace SCPSLSettingChanger
 
         private void FormatInput(TextBox InputBox, double MaxValue)
         {
-            if (String.IsNullOrWhiteSpace(InputBox.Text))
+            try
             {
-                InputBox.Text = "0";
-                return;
+                if (String.IsNullOrWhiteSpace(InputBox.Text))
+                {
+                    InputBox.Text = "0";
+                    return;
+                }
+                if (InputBox.Text.StartsWith("."))
+                    return;
+                if (double.Parse(InputBox.Text) > MaxValue)
+                    InputBox.Text = MaxValue.ToString();
             }
-            if (InputBox.Text.StartsWith("."))
-                return;
-            if (double.Parse(InputBox.Text) > MaxValue)
-                InputBox.Text = MaxValue.ToString();
+            catch (Exception)
+            {
+
+            }
         }
 
         private void FormatInput(TextBox InputBox1, TextBox InputBox2, double MaxValue)
         {
-            if (String.IsNullOrWhiteSpace(InputBox1.Text))
+            try
             {
-                InputBox1.Text = "0";
-                return;
-            }
-            if (double.Parse(InputBox1.Text) <= MaxValue)
-            {
-                double TextBox1Value = double.Parse(InputBox1.Text);
-                if (CHK_SameMenuAndInterface.Checked && !String.IsNullOrWhiteSpace(InputBox1.Text))
+                if (String.IsNullOrWhiteSpace(InputBox1.Text))
                 {
-                    double TextBox2Value = double.Parse(InputBox2.Text);
-                    if (TextBox2Value != TextBox1Value)
-                        InputBox2.Text = TextBox1Value.ToString();
+                    InputBox1.Text = "0";
+                    return;
                 }
+                if (double.Parse(InputBox1.Text) <= MaxValue)
+                {
+                    double TextBox1Value = double.Parse(InputBox1.Text);
+                    if (CHK_SameMenuAndInterface.Checked && !String.IsNullOrWhiteSpace(InputBox1.Text))
+                    {
+                        double TextBox2Value = double.Parse(InputBox2.Text);
+                        if (TextBox2Value != TextBox1Value)
+                            InputBox2.Text = TextBox1Value.ToString();
+                    }
+                }
+                else
+                    if (double.Parse(InputBox1.Text) > MaxValue)
+                        InputBox1.Text = MaxValue.ToString();
             }
-            else
-                if (double.Parse(InputBox1.Text) > MaxValue)
-                    InputBox1.Text = MaxValue.ToString();
+            catch (Exception)
+            {
+
+            }
         }
 
         private void SaveValues()
