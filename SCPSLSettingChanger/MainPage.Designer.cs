@@ -61,6 +61,11 @@
             this.LBL_HeadBob = new System.Windows.Forms.Label();
             this.LBL_FastIntroFade = new System.Windows.Forms.Label();
             this.GBOX_AudioSettings = new System.Windows.Forms.GroupBox();
+            this.NUD_InterfaceVolume = new System.Windows.Forms.NumericUpDown();
+            this.NUD_MenuMusic = new System.Windows.Forms.NumericUpDown();
+            this.NUD_VoiceChat = new System.Windows.Forms.NumericUpDown();
+            this.NUD_SoundEffects = new System.Windows.Forms.NumericUpDown();
+            this.NUD_MasterVolume = new System.Windows.Forms.NumericUpDown();
             this.CHK_SameMenuAndInterface = new System.Windows.Forms.CheckBox();
             this.LBL_SameMenuAndInterface = new System.Windows.Forms.Label();
             this.CBOX_MenuMusicTheme = new System.Windows.Forms.ComboBox();
@@ -98,7 +103,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LBL_ScreenResolution = new System.Windows.Forms.Label();
             this.GBOX_InGameSettings = new System.Windows.Forms.GroupBox();
+            this.NUD_Sensitivty = new System.Windows.Forms.NumericUpDown();
             this.CHK_InvertYAxisChoice = new System.Windows.Forms.CheckBox();
+            this.NUD_Brightness = new System.Windows.Forms.NumericUpDown();
             this.LBL_InvertYAxis = new System.Windows.Forms.Label();
             this.LBL_Sensitivity = new System.Windows.Forms.Label();
             this.LBL_Brightness = new System.Windows.Forms.Label();
@@ -138,31 +145,24 @@
             this.LBL_MP7Other = new System.Windows.Forms.Label();
             this.LBL_MP7Barrel = new System.Windows.Forms.Label();
             this.LBL_MP7Sight = new System.Windows.Forms.Label();
-            this.NUD_MasterVolume = new System.Windows.Forms.NumericUpDown();
-            this.NUD_SoundEffects = new System.Windows.Forms.NumericUpDown();
-            this.NUD_VoiceChat = new System.Windows.Forms.NumericUpDown();
-            this.NUD_MenuMusic = new System.Windows.Forms.NumericUpDown();
-            this.NUD_InterfaceVolume = new System.Windows.Forms.NumericUpDown();
-            this.NUD_Sensitivty = new System.Windows.Forms.NumericUpDown();
-            this.NUD_Brightness = new System.Windows.Forms.NumericUpDown();
             this.GBOX_OtherSettings.SuspendLayout();
             this.GBOX_GameplaySettings.SuspendLayout();
             this.GBOX_AudioSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_InterfaceVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MenuMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_VoiceChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_SoundEffects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MasterVolume)).BeginInit();
             this.GBOX_VideoSettings.SuspendLayout();
             this.GBOX_InGameSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Sensitivty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Brightness)).BeginInit();
             this.GBOX_WeaponSettings.SuspendLayout();
             this.GBOX_COM15Pistol.SuspendLayout();
             this.GBOX_USPPistol.SuspendLayout();
             this.GBOX_Epsilon11Rifle.SuspendLayout();
             this.GBOX_Project90SMG.SuspendLayout();
             this.GBOX_MP7SMG.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_MasterVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_SoundEffects)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_VoiceChat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_MenuMusic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_InterfaceVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Sensitivty)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Brightness)).BeginInit();
             this.SuspendLayout();
             // 
             // GBOX_OtherSettings
@@ -553,6 +553,48 @@
             this.GBOX_AudioSettings.TabIndex = 27;
             this.GBOX_AudioSettings.TabStop = false;
             this.GBOX_AudioSettings.Text = "Audio Settings";
+            // 
+            // NUD_InterfaceVolume
+            // 
+            this.NUD_InterfaceVolume.DecimalPlaces = 3;
+            this.NUD_InterfaceVolume.Location = new System.Drawing.Point(111, 125);
+            this.NUD_InterfaceVolume.Name = "NUD_InterfaceVolume";
+            this.NUD_InterfaceVolume.Size = new System.Drawing.Size(184, 22);
+            this.NUD_InterfaceVolume.TabIndex = 37;
+            this.NUD_InterfaceVolume.ValueChanged += new System.EventHandler(this.NUD_InterfaceVolume_ValueChanged);
+            // 
+            // NUD_MenuMusic
+            // 
+            this.NUD_MenuMusic.DecimalPlaces = 3;
+            this.NUD_MenuMusic.Location = new System.Drawing.Point(111, 97);
+            this.NUD_MenuMusic.Name = "NUD_MenuMusic";
+            this.NUD_MenuMusic.Size = new System.Drawing.Size(184, 22);
+            this.NUD_MenuMusic.TabIndex = 35;
+            this.NUD_MenuMusic.ValueChanged += new System.EventHandler(this.NUD_MenuMusic_ValueChanged);
+            // 
+            // NUD_VoiceChat
+            // 
+            this.NUD_VoiceChat.DecimalPlaces = 3;
+            this.NUD_VoiceChat.Location = new System.Drawing.Point(111, 70);
+            this.NUD_VoiceChat.Name = "NUD_VoiceChat";
+            this.NUD_VoiceChat.Size = new System.Drawing.Size(184, 22);
+            this.NUD_VoiceChat.TabIndex = 33;
+            // 
+            // NUD_SoundEffects
+            // 
+            this.NUD_SoundEffects.DecimalPlaces = 3;
+            this.NUD_SoundEffects.Location = new System.Drawing.Point(111, 43);
+            this.NUD_SoundEffects.Name = "NUD_SoundEffects";
+            this.NUD_SoundEffects.Size = new System.Drawing.Size(184, 22);
+            this.NUD_SoundEffects.TabIndex = 31;
+            // 
+            // NUD_MasterVolume
+            // 
+            this.NUD_MasterVolume.DecimalPlaces = 3;
+            this.NUD_MasterVolume.Location = new System.Drawing.Point(111, 17);
+            this.NUD_MasterVolume.Name = "NUD_MasterVolume";
+            this.NUD_MasterVolume.Size = new System.Drawing.Size(184, 22);
+            this.NUD_MasterVolume.TabIndex = 29;
             // 
             // CHK_SameMenuAndInterface
             // 
@@ -1016,6 +1058,14 @@
             this.GBOX_InGameSettings.TabStop = false;
             this.GBOX_InGameSettings.Text = "In-Game Settings";
             // 
+            // NUD_Sensitivty
+            // 
+            this.NUD_Sensitivty.DecimalPlaces = 3;
+            this.NUD_Sensitivty.Location = new System.Drawing.Point(108, 43);
+            this.NUD_Sensitivty.Name = "NUD_Sensitivty";
+            this.NUD_Sensitivty.Size = new System.Drawing.Size(184, 22);
+            this.NUD_Sensitivty.TabIndex = 75;
+            // 
             // CHK_InvertYAxisChoice
             // 
             this.CHK_InvertYAxisChoice.AutoSize = true;
@@ -1025,6 +1075,14 @@
             this.CHK_InvertYAxisChoice.TabIndex = 77;
             this.CHK_InvertYAxisChoice.Text = "Enable Setting?";
             this.CHK_InvertYAxisChoice.UseVisualStyleBackColor = true;
+            // 
+            // NUD_Brightness
+            // 
+            this.NUD_Brightness.DecimalPlaces = 3;
+            this.NUD_Brightness.Location = new System.Drawing.Point(108, 16);
+            this.NUD_Brightness.Name = "NUD_Brightness";
+            this.NUD_Brightness.Size = new System.Drawing.Size(184, 22);
+            this.NUD_Brightness.TabIndex = 73;
             // 
             // LBL_InvertYAxis
             // 
@@ -1475,62 +1533,6 @@
             this.LBL_MP7Sight.TabIndex = 94;
             this.LBL_MP7Sight.Text = "Sight";
             // 
-            // NUD_MasterVolume
-            // 
-            this.NUD_MasterVolume.DecimalPlaces = 3;
-            this.NUD_MasterVolume.Location = new System.Drawing.Point(111, 17);
-            this.NUD_MasterVolume.Name = "NUD_MasterVolume";
-            this.NUD_MasterVolume.Size = new System.Drawing.Size(184, 22);
-            this.NUD_MasterVolume.TabIndex = 41;
-            // 
-            // NUD_SoundEffects
-            // 
-            this.NUD_SoundEffects.DecimalPlaces = 3;
-            this.NUD_SoundEffects.Location = new System.Drawing.Point(111, 43);
-            this.NUD_SoundEffects.Name = "NUD_SoundEffects";
-            this.NUD_SoundEffects.Size = new System.Drawing.Size(184, 22);
-            this.NUD_SoundEffects.TabIndex = 42;
-            // 
-            // NUD_VoiceChat
-            // 
-            this.NUD_VoiceChat.DecimalPlaces = 3;
-            this.NUD_VoiceChat.Location = new System.Drawing.Point(111, 70);
-            this.NUD_VoiceChat.Name = "NUD_VoiceChat";
-            this.NUD_VoiceChat.Size = new System.Drawing.Size(184, 22);
-            this.NUD_VoiceChat.TabIndex = 43;
-            // 
-            // NUD_MenuMusic
-            // 
-            this.NUD_MenuMusic.DecimalPlaces = 3;
-            this.NUD_MenuMusic.Location = new System.Drawing.Point(111, 97);
-            this.NUD_MenuMusic.Name = "NUD_MenuMusic";
-            this.NUD_MenuMusic.Size = new System.Drawing.Size(184, 22);
-            this.NUD_MenuMusic.TabIndex = 44;
-            // 
-            // NUD_InterfaceVolume
-            // 
-            this.NUD_InterfaceVolume.DecimalPlaces = 3;
-            this.NUD_InterfaceVolume.Location = new System.Drawing.Point(111, 125);
-            this.NUD_InterfaceVolume.Name = "NUD_InterfaceVolume";
-            this.NUD_InterfaceVolume.Size = new System.Drawing.Size(184, 22);
-            this.NUD_InterfaceVolume.TabIndex = 45;
-            // 
-            // NUD_Sensitivty
-            // 
-            this.NUD_Sensitivty.DecimalPlaces = 3;
-            this.NUD_Sensitivty.Location = new System.Drawing.Point(108, 43);
-            this.NUD_Sensitivty.Name = "NUD_Sensitivty";
-            this.NUD_Sensitivty.Size = new System.Drawing.Size(184, 22);
-            this.NUD_Sensitivty.TabIndex = 47;
-            // 
-            // NUD_Brightness
-            // 
-            this.NUD_Brightness.DecimalPlaces = 3;
-            this.NUD_Brightness.Location = new System.Drawing.Point(108, 16);
-            this.NUD_Brightness.Name = "NUD_Brightness";
-            this.NUD_Brightness.Size = new System.Drawing.Size(184, 22);
-            this.NUD_Brightness.TabIndex = 46;
-            // 
             // FRM_MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1557,10 +1559,17 @@
             this.GBOX_GameplaySettings.PerformLayout();
             this.GBOX_AudioSettings.ResumeLayout(false);
             this.GBOX_AudioSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_InterfaceVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MenuMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_VoiceChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_SoundEffects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MasterVolume)).EndInit();
             this.GBOX_VideoSettings.ResumeLayout(false);
             this.GBOX_VideoSettings.PerformLayout();
             this.GBOX_InGameSettings.ResumeLayout(false);
             this.GBOX_InGameSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Sensitivty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Brightness)).EndInit();
             this.GBOX_WeaponSettings.ResumeLayout(false);
             this.GBOX_COM15Pistol.ResumeLayout(false);
             this.GBOX_COM15Pistol.PerformLayout();
@@ -1572,13 +1581,6 @@
             this.GBOX_Project90SMG.PerformLayout();
             this.GBOX_MP7SMG.ResumeLayout(false);
             this.GBOX_MP7SMG.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_MasterVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_SoundEffects)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_VoiceChat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_MenuMusic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_InterfaceVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Sensitivty)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUD_Brightness)).EndInit();
             this.ResumeLayout(false);
 
         }

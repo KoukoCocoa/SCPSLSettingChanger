@@ -118,81 +118,6 @@ namespace SCPSLSettingChanger
             MessageBox.Show("The game directory where the settings belong to is not there (Do you have the game installed?)", "Directory does not exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void TBOX_MasterVolumeValue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
-
-        private void TBOX_MasterVolumeValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_SoundEffectsVolume_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
-        private void TBOX_SoundEffectsVolume_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_VoiceChatValue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
-
-        private void TBOX_VoiceChatValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_MenuMusicValue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
-
-        private void TBOX_MenuMusicValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_InterfaceVolumeValue_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
-
-        private void TBOX_InterfaceVolumeValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_Brightness_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_Brightness_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
-
-        private void TBOX_Sensitivty_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBOX_Sensitivity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (CheckInput(e, (sender as TextBox)))
-                e.Handled = true;
-        }
 
         private void CHK_VSync_CheckedChanged(object sender, EventArgs e)
         {
@@ -218,71 +143,27 @@ namespace SCPSLSettingChanger
 
         private void CHK_SameMenuAndInterface_CheckedChanged(object sender, EventArgs e)
         {
+            FormatInput();
+        }
+
+        private void NUD_MenuMusic_ValueChanged(object sender, EventArgs e)
+        {
+            if (CHK_SameMenuAndInterface.Checked)
+                FormatInput();
+        }
+
+        private void NUD_InterfaceVolume_ValueChanged(object sender, EventArgs e)
+        {
+            if (CHK_SameMenuAndInterface.Checked)
+                FormatInput();
+        }
+
+        private void FormatInput()
+        {
             if (NUD_MenuMusic.Value < NUD_InterfaceVolume.Value)
                 NUD_MenuMusic.Value = NUD_InterfaceVolume.Value;
             else
                 NUD_InterfaceVolume.Value = NUD_MenuMusic.Value;
-        }
-
-        private bool CheckInput(KeyPressEventArgs KeyPress, TextBox InputBox)
-        {
-            int count = InputBox.Text.Count(c => c == '.');
-            if (KeyPress.KeyChar == '.' && count < 1)
-                return false;
-            if (char.IsDigit(KeyPress.KeyChar))
-                return false;
-            if (char.IsControl(KeyPress.KeyChar))
-                return false;
-            return true;
-        }
-
-        private void FormatInput(TextBox InputBox, double MaxValue)
-        {
-            try
-            {
-                if (String.IsNullOrWhiteSpace(InputBox.Text))
-                {
-                    InputBox.Text = "0";
-                    return;
-                }
-                if (InputBox.Text.StartsWith("."))
-                    return;
-                if (double.Parse(InputBox.Text) > MaxValue)
-                    InputBox.Text = MaxValue.ToString();
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        private void FormatInput(TextBox InputBox1, TextBox InputBox2, double MaxValue)
-        {
-            try
-            {
-                if (String.IsNullOrWhiteSpace(InputBox1.Text))
-                {
-                    InputBox1.Text = "0";
-                    return;
-                }
-                if (double.Parse(InputBox1.Text) <= MaxValue)
-                {
-                    double TextBox1Value = double.Parse(InputBox1.Text);
-                    if (CHK_SameMenuAndInterface.Checked && !String.IsNullOrWhiteSpace(InputBox1.Text))
-                    {
-                        double TextBox2Value = double.Parse(InputBox2.Text);
-                        if (TextBox2Value != TextBox1Value)
-                            InputBox2.Text = TextBox1Value.ToString();
-                    }
-                }
-                else
-                    if (double.Parse(InputBox1.Text) > MaxValue)
-                        InputBox1.Text = MaxValue.ToString();
-            }
-            catch (Exception)
-            {
-
-            }
         }
 
         private void SaveValues()
