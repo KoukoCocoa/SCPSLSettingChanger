@@ -61,15 +61,15 @@
             this.LBL_HeadBob = new System.Windows.Forms.Label();
             this.LBL_FastIntroFade = new System.Windows.Forms.Label();
             this.GBOX_AudioSettings = new System.Windows.Forms.GroupBox();
+            this.NUD_InterfaceVolume = new System.Windows.Forms.NumericUpDown();
+            this.NUD_MenuMusic = new System.Windows.Forms.NumericUpDown();
+            this.NUD_VoiceChat = new System.Windows.Forms.NumericUpDown();
+            this.NUD_SoundEffects = new System.Windows.Forms.NumericUpDown();
+            this.NUD_MasterVolume = new System.Windows.Forms.NumericUpDown();
             this.CHK_SameMenuAndInterface = new System.Windows.Forms.CheckBox();
             this.LBL_SameMenuAndInterface = new System.Windows.Forms.Label();
             this.CBOX_MenuMusicTheme = new System.Windows.Forms.ComboBox();
             this.LBL_MenuTheme = new System.Windows.Forms.Label();
-            this.TBOX_InterfaceVolumeValue = new System.Windows.Forms.TextBox();
-            this.TBOX_MenuMusicValue = new System.Windows.Forms.TextBox();
-            this.TBOX_VoiceChatValue = new System.Windows.Forms.TextBox();
-            this.TBOX_SoundEffectsVolume = new System.Windows.Forms.TextBox();
-            this.TBOX_MasterVolumeValue = new System.Windows.Forms.TextBox();
             this.LBL_InterfaceVolume = new System.Windows.Forms.Label();
             this.LBL_MenuMusic = new System.Windows.Forms.Label();
             this.LBL_VoiceChat = new System.Windows.Forms.Label();
@@ -103,10 +103,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LBL_ScreenResolution = new System.Windows.Forms.Label();
             this.GBOX_InGameSettings = new System.Windows.Forms.GroupBox();
+            this.NUD_Sensitivty = new System.Windows.Forms.NumericUpDown();
             this.CHK_InvertYAxisChoice = new System.Windows.Forms.CheckBox();
+            this.NUD_Brightness = new System.Windows.Forms.NumericUpDown();
             this.LBL_InvertYAxis = new System.Windows.Forms.Label();
-            this.TBOX_Sensitivty = new System.Windows.Forms.TextBox();
-            this.TBOX_Brightness = new System.Windows.Forms.TextBox();
             this.LBL_Sensitivity = new System.Windows.Forms.Label();
             this.LBL_Brightness = new System.Windows.Forms.Label();
             this.GBOX_WeaponSettings = new System.Windows.Forms.GroupBox();
@@ -148,8 +148,15 @@
             this.GBOX_OtherSettings.SuspendLayout();
             this.GBOX_GameplaySettings.SuspendLayout();
             this.GBOX_AudioSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_InterfaceVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MenuMusic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_VoiceChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_SoundEffects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MasterVolume)).BeginInit();
             this.GBOX_VideoSettings.SuspendLayout();
             this.GBOX_InGameSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Sensitivty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Brightness)).BeginInit();
             this.GBOX_WeaponSettings.SuspendLayout();
             this.GBOX_COM15Pistol.SuspendLayout();
             this.GBOX_USPPistol.SuspendLayout();
@@ -290,7 +297,7 @@
             this.BTN_GenerateConfig.Location = new System.Drawing.Point(401, 616);
             this.BTN_GenerateConfig.Name = "BTN_GenerateConfig";
             this.BTN_GenerateConfig.Size = new System.Drawing.Size(123, 31);
-            this.BTN_GenerateConfig.TabIndex = 76;
+            this.BTN_GenerateConfig.TabIndex = 114;
             this.BTN_GenerateConfig.Text = "Generate Config";
             this.BTN_GenerateConfig.UseVisualStyleBackColor = true;
             this.BTN_GenerateConfig.Click += new System.EventHandler(this.BTN_GenerateConfig_Click);
@@ -526,15 +533,15 @@
             // 
             // GBOX_AudioSettings
             // 
+            this.GBOX_AudioSettings.Controls.Add(this.NUD_InterfaceVolume);
+            this.GBOX_AudioSettings.Controls.Add(this.NUD_MenuMusic);
+            this.GBOX_AudioSettings.Controls.Add(this.NUD_VoiceChat);
+            this.GBOX_AudioSettings.Controls.Add(this.NUD_SoundEffects);
+            this.GBOX_AudioSettings.Controls.Add(this.NUD_MasterVolume);
             this.GBOX_AudioSettings.Controls.Add(this.CHK_SameMenuAndInterface);
             this.GBOX_AudioSettings.Controls.Add(this.LBL_SameMenuAndInterface);
             this.GBOX_AudioSettings.Controls.Add(this.CBOX_MenuMusicTheme);
             this.GBOX_AudioSettings.Controls.Add(this.LBL_MenuTheme);
-            this.GBOX_AudioSettings.Controls.Add(this.TBOX_InterfaceVolumeValue);
-            this.GBOX_AudioSettings.Controls.Add(this.TBOX_MenuMusicValue);
-            this.GBOX_AudioSettings.Controls.Add(this.TBOX_VoiceChatValue);
-            this.GBOX_AudioSettings.Controls.Add(this.TBOX_SoundEffectsVolume);
-            this.GBOX_AudioSettings.Controls.Add(this.TBOX_MasterVolumeValue);
             this.GBOX_AudioSettings.Controls.Add(this.LBL_InterfaceVolume);
             this.GBOX_AudioSettings.Controls.Add(this.LBL_MenuMusic);
             this.GBOX_AudioSettings.Controls.Add(this.LBL_VoiceChat);
@@ -546,6 +553,48 @@
             this.GBOX_AudioSettings.TabIndex = 27;
             this.GBOX_AudioSettings.TabStop = false;
             this.GBOX_AudioSettings.Text = "Audio Settings";
+            // 
+            // NUD_InterfaceVolume
+            // 
+            this.NUD_InterfaceVolume.DecimalPlaces = 3;
+            this.NUD_InterfaceVolume.Location = new System.Drawing.Point(111, 125);
+            this.NUD_InterfaceVolume.Name = "NUD_InterfaceVolume";
+            this.NUD_InterfaceVolume.Size = new System.Drawing.Size(184, 22);
+            this.NUD_InterfaceVolume.TabIndex = 37;
+            this.NUD_InterfaceVolume.ValueChanged += new System.EventHandler(this.NUD_InterfaceVolume_ValueChanged);
+            // 
+            // NUD_MenuMusic
+            // 
+            this.NUD_MenuMusic.DecimalPlaces = 3;
+            this.NUD_MenuMusic.Location = new System.Drawing.Point(111, 97);
+            this.NUD_MenuMusic.Name = "NUD_MenuMusic";
+            this.NUD_MenuMusic.Size = new System.Drawing.Size(184, 22);
+            this.NUD_MenuMusic.TabIndex = 35;
+            this.NUD_MenuMusic.ValueChanged += new System.EventHandler(this.NUD_MenuMusic_ValueChanged);
+            // 
+            // NUD_VoiceChat
+            // 
+            this.NUD_VoiceChat.DecimalPlaces = 3;
+            this.NUD_VoiceChat.Location = new System.Drawing.Point(111, 70);
+            this.NUD_VoiceChat.Name = "NUD_VoiceChat";
+            this.NUD_VoiceChat.Size = new System.Drawing.Size(184, 22);
+            this.NUD_VoiceChat.TabIndex = 33;
+            // 
+            // NUD_SoundEffects
+            // 
+            this.NUD_SoundEffects.DecimalPlaces = 3;
+            this.NUD_SoundEffects.Location = new System.Drawing.Point(111, 43);
+            this.NUD_SoundEffects.Name = "NUD_SoundEffects";
+            this.NUD_SoundEffects.Size = new System.Drawing.Size(184, 22);
+            this.NUD_SoundEffects.TabIndex = 31;
+            // 
+            // NUD_MasterVolume
+            // 
+            this.NUD_MasterVolume.DecimalPlaces = 3;
+            this.NUD_MasterVolume.Location = new System.Drawing.Point(111, 17);
+            this.NUD_MasterVolume.Name = "NUD_MasterVolume";
+            this.NUD_MasterVolume.Size = new System.Drawing.Size(184, 22);
+            this.NUD_MasterVolume.TabIndex = 29;
             // 
             // CHK_SameMenuAndInterface
             // 
@@ -591,51 +640,6 @@
             this.LBL_MenuTheme.Size = new System.Drawing.Size(77, 15);
             this.LBL_MenuTheme.TabIndex = 39;
             this.LBL_MenuTheme.Text = "Menu Theme";
-            // 
-            // TBOX_InterfaceVolumeValue
-            // 
-            this.TBOX_InterfaceVolumeValue.Location = new System.Drawing.Point(115, 123);
-            this.TBOX_InterfaceVolumeValue.Name = "TBOX_InterfaceVolumeValue";
-            this.TBOX_InterfaceVolumeValue.Size = new System.Drawing.Size(180, 22);
-            this.TBOX_InterfaceVolumeValue.TabIndex = 36;
-            this.TBOX_InterfaceVolumeValue.TextChanged += new System.EventHandler(this.TBOX_InterfaceVolumeValue_TextChanged);
-            this.TBOX_InterfaceVolumeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_InterfaceVolumeValue_KeyPress);
-            // 
-            // TBOX_MenuMusicValue
-            // 
-            this.TBOX_MenuMusicValue.Location = new System.Drawing.Point(115, 96);
-            this.TBOX_MenuMusicValue.Name = "TBOX_MenuMusicValue";
-            this.TBOX_MenuMusicValue.Size = new System.Drawing.Size(180, 22);
-            this.TBOX_MenuMusicValue.TabIndex = 34;
-            this.TBOX_MenuMusicValue.TextChanged += new System.EventHandler(this.TBOX_MenuMusicValue_TextChanged);
-            this.TBOX_MenuMusicValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_MenuMusicValue_KeyPress);
-            // 
-            // TBOX_VoiceChatValue
-            // 
-            this.TBOX_VoiceChatValue.Location = new System.Drawing.Point(115, 70);
-            this.TBOX_VoiceChatValue.Name = "TBOX_VoiceChatValue";
-            this.TBOX_VoiceChatValue.Size = new System.Drawing.Size(180, 22);
-            this.TBOX_VoiceChatValue.TabIndex = 32;
-            this.TBOX_VoiceChatValue.TextChanged += new System.EventHandler(this.TBOX_VoiceChatValue_TextChanged);
-            this.TBOX_VoiceChatValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_VoiceChatValue_KeyPress);
-            // 
-            // TBOX_SoundEffectsVolume
-            // 
-            this.TBOX_SoundEffectsVolume.Location = new System.Drawing.Point(115, 44);
-            this.TBOX_SoundEffectsVolume.Name = "TBOX_SoundEffectsVolume";
-            this.TBOX_SoundEffectsVolume.Size = new System.Drawing.Size(180, 22);
-            this.TBOX_SoundEffectsVolume.TabIndex = 31;
-            this.TBOX_SoundEffectsVolume.TextChanged += new System.EventHandler(this.TBOX_SoundEffectsVolume_TextChanged);
-            this.TBOX_SoundEffectsVolume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_SoundEffectsVolume_KeyPress);
-            // 
-            // TBOX_MasterVolumeValue
-            // 
-            this.TBOX_MasterVolumeValue.Location = new System.Drawing.Point(115, 18);
-            this.TBOX_MasterVolumeValue.Name = "TBOX_MasterVolumeValue";
-            this.TBOX_MasterVolumeValue.Size = new System.Drawing.Size(180, 22);
-            this.TBOX_MasterVolumeValue.TabIndex = 29;
-            this.TBOX_MasterVolumeValue.TextChanged += new System.EventHandler(this.TBOX_MasterVolumeValue_TextChanged);
-            this.TBOX_MasterVolumeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_MasterVolumeValue_KeyPress);
             // 
             // LBL_InterfaceVolume
             // 
@@ -1041,10 +1045,10 @@
             // 
             // GBOX_InGameSettings
             // 
+            this.GBOX_InGameSettings.Controls.Add(this.NUD_Sensitivty);
             this.GBOX_InGameSettings.Controls.Add(this.CHK_InvertYAxisChoice);
+            this.GBOX_InGameSettings.Controls.Add(this.NUD_Brightness);
             this.GBOX_InGameSettings.Controls.Add(this.LBL_InvertYAxis);
-            this.GBOX_InGameSettings.Controls.Add(this.TBOX_Sensitivty);
-            this.GBOX_InGameSettings.Controls.Add(this.TBOX_Brightness);
             this.GBOX_InGameSettings.Controls.Add(this.LBL_Sensitivity);
             this.GBOX_InGameSettings.Controls.Add(this.LBL_Brightness);
             this.GBOX_InGameSettings.Location = new System.Drawing.Point(596, 261);
@@ -1054,15 +1058,31 @@
             this.GBOX_InGameSettings.TabStop = false;
             this.GBOX_InGameSettings.Text = "In-Game Settings";
             // 
+            // NUD_Sensitivty
+            // 
+            this.NUD_Sensitivty.DecimalPlaces = 3;
+            this.NUD_Sensitivty.Location = new System.Drawing.Point(108, 43);
+            this.NUD_Sensitivty.Name = "NUD_Sensitivty";
+            this.NUD_Sensitivty.Size = new System.Drawing.Size(184, 22);
+            this.NUD_Sensitivty.TabIndex = 75;
+            // 
             // CHK_InvertYAxisChoice
             // 
             this.CHK_InvertYAxisChoice.AutoSize = true;
-            this.CHK_InvertYAxisChoice.Location = new System.Drawing.Point(143, 69);
+            this.CHK_InvertYAxisChoice.Location = new System.Drawing.Point(143, 70);
             this.CHK_InvertYAxisChoice.Name = "CHK_InvertYAxisChoice";
             this.CHK_InvertYAxisChoice.Size = new System.Drawing.Size(106, 17);
             this.CHK_InvertYAxisChoice.TabIndex = 77;
             this.CHK_InvertYAxisChoice.Text = "Enable Setting?";
             this.CHK_InvertYAxisChoice.UseVisualStyleBackColor = true;
+            // 
+            // NUD_Brightness
+            // 
+            this.NUD_Brightness.DecimalPlaces = 3;
+            this.NUD_Brightness.Location = new System.Drawing.Point(108, 16);
+            this.NUD_Brightness.Name = "NUD_Brightness";
+            this.NUD_Brightness.Size = new System.Drawing.Size(184, 22);
+            this.NUD_Brightness.TabIndex = 73;
             // 
             // LBL_InvertYAxis
             // 
@@ -1073,24 +1093,6 @@
             this.LBL_InvertYAxis.Size = new System.Drawing.Size(74, 15);
             this.LBL_InvertYAxis.TabIndex = 76;
             this.LBL_InvertYAxis.Text = "Invert Y-Axis";
-            // 
-            // TBOX_Sensitivty
-            // 
-            this.TBOX_Sensitivty.Location = new System.Drawing.Point(90, 43);
-            this.TBOX_Sensitivty.Name = "TBOX_Sensitivty";
-            this.TBOX_Sensitivty.Size = new System.Drawing.Size(207, 22);
-            this.TBOX_Sensitivty.TabIndex = 75;
-            this.TBOX_Sensitivty.TextChanged += new System.EventHandler(this.TBOX_Sensitivty_TextChanged);
-            this.TBOX_Sensitivty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_Sensitivity_KeyPress);
-            // 
-            // TBOX_Brightness
-            // 
-            this.TBOX_Brightness.Location = new System.Drawing.Point(90, 17);
-            this.TBOX_Brightness.Name = "TBOX_Brightness";
-            this.TBOX_Brightness.Size = new System.Drawing.Size(207, 22);
-            this.TBOX_Brightness.TabIndex = 73;
-            this.TBOX_Brightness.TextChanged += new System.EventHandler(this.TBOX_Brightness_TextChanged);
-            this.TBOX_Brightness.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBOX_Brightness_KeyPress);
             // 
             // LBL_Sensitivity
             // 
@@ -1122,7 +1124,7 @@
             this.GBOX_WeaponSettings.Location = new System.Drawing.Point(6, 352);
             this.GBOX_WeaponSettings.Name = "GBOX_WeaponSettings";
             this.GBOX_WeaponSettings.Size = new System.Drawing.Size(899, 252);
-            this.GBOX_WeaponSettings.TabIndex = 77;
+            this.GBOX_WeaponSettings.TabIndex = 78;
             this.GBOX_WeaponSettings.TabStop = false;
             this.GBOX_WeaponSettings.Text = "Weapon Settings";
             // 
@@ -1137,7 +1139,7 @@
             this.GBOX_COM15Pistol.Location = new System.Drawing.Point(457, 128);
             this.GBOX_COM15Pistol.Name = "GBOX_COM15Pistol";
             this.GBOX_COM15Pistol.Size = new System.Drawing.Size(291, 114);
-            this.GBOX_COM15Pistol.TabIndex = 2;
+            this.GBOX_COM15Pistol.TabIndex = 107;
             this.GBOX_COM15Pistol.TabStop = false;
             this.GBOX_COM15Pistol.Text = "COM-15 Pistol Attachments";
             // 
@@ -1151,7 +1153,7 @@
             this.CBOX_COM15Other.Location = new System.Drawing.Point(54, 83);
             this.CBOX_COM15Other.Name = "CBOX_COM15Other";
             this.CBOX_COM15Other.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_COM15Other.TabIndex = 41;
+            this.CBOX_COM15Other.TabIndex = 113;
             // 
             // CBOX_COM15Barrel
             // 
@@ -1163,7 +1165,7 @@
             this.CBOX_COM15Barrel.Location = new System.Drawing.Point(54, 52);
             this.CBOX_COM15Barrel.Name = "CBOX_COM15Barrel";
             this.CBOX_COM15Barrel.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_COM15Barrel.TabIndex = 40;
+            this.CBOX_COM15Barrel.TabIndex = 111;
             // 
             // CBOX_COM15Sight
             // 
@@ -1174,7 +1176,7 @@
             this.CBOX_COM15Sight.Location = new System.Drawing.Point(54, 20);
             this.CBOX_COM15Sight.Name = "CBOX_COM15Sight";
             this.CBOX_COM15Sight.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_COM15Sight.TabIndex = 39;
+            this.CBOX_COM15Sight.TabIndex = 109;
             // 
             // LBL_COM15Other
             // 
@@ -1182,7 +1184,7 @@
             this.LBL_COM15Other.Location = new System.Drawing.Point(8, 86);
             this.LBL_COM15Other.Name = "LBL_COM15Other";
             this.LBL_COM15Other.Size = new System.Drawing.Size(37, 13);
-            this.LBL_COM15Other.TabIndex = 38;
+            this.LBL_COM15Other.TabIndex = 112;
             this.LBL_COM15Other.Text = "Other";
             // 
             // LBL_COM15Barrel
@@ -1191,7 +1193,7 @@
             this.LBL_COM15Barrel.Location = new System.Drawing.Point(8, 54);
             this.LBL_COM15Barrel.Name = "LBL_COM15Barrel";
             this.LBL_COM15Barrel.Size = new System.Drawing.Size(36, 13);
-            this.LBL_COM15Barrel.TabIndex = 37;
+            this.LBL_COM15Barrel.TabIndex = 110;
             this.LBL_COM15Barrel.Text = "Barrel";
             // 
             // LBL_COM15Sight
@@ -1200,7 +1202,7 @@
             this.LBL_COM15Sight.Location = new System.Drawing.Point(8, 23);
             this.LBL_COM15Sight.Name = "LBL_COM15Sight";
             this.LBL_COM15Sight.Size = new System.Drawing.Size(34, 13);
-            this.LBL_COM15Sight.TabIndex = 36;
+            this.LBL_COM15Sight.TabIndex = 108;
             this.LBL_COM15Sight.Text = "Sight";
             // 
             // GBOX_USPPistol
@@ -1214,7 +1216,7 @@
             this.GBOX_USPPistol.Location = new System.Drawing.Point(160, 128);
             this.GBOX_USPPistol.Name = "GBOX_USPPistol";
             this.GBOX_USPPistol.Size = new System.Drawing.Size(291, 114);
-            this.GBOX_USPPistol.TabIndex = 1;
+            this.GBOX_USPPistol.TabIndex = 100;
             this.GBOX_USPPistol.TabStop = false;
             this.GBOX_USPPistol.Text = "USP Pistol Attachments";
             // 
@@ -1228,7 +1230,7 @@
             this.CBOX_USPOther.Location = new System.Drawing.Point(54, 84);
             this.CBOX_USPOther.Name = "CBOX_USPOther";
             this.CBOX_USPOther.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_USPOther.TabIndex = 41;
+            this.CBOX_USPOther.TabIndex = 106;
             // 
             // CBOX_USPBarrel
             // 
@@ -1241,7 +1243,7 @@
             this.CBOX_USPBarrel.Location = new System.Drawing.Point(54, 53);
             this.CBOX_USPBarrel.Name = "CBOX_USPBarrel";
             this.CBOX_USPBarrel.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_USPBarrel.TabIndex = 40;
+            this.CBOX_USPBarrel.TabIndex = 104;
             // 
             // CBOX_USPSight
             // 
@@ -1253,7 +1255,7 @@
             this.CBOX_USPSight.Location = new System.Drawing.Point(54, 21);
             this.CBOX_USPSight.Name = "CBOX_USPSight";
             this.CBOX_USPSight.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_USPSight.TabIndex = 39;
+            this.CBOX_USPSight.TabIndex = 102;
             // 
             // LBL_USPOther
             // 
@@ -1261,7 +1263,7 @@
             this.LBL_USPOther.Location = new System.Drawing.Point(8, 87);
             this.LBL_USPOther.Name = "LBL_USPOther";
             this.LBL_USPOther.Size = new System.Drawing.Size(37, 13);
-            this.LBL_USPOther.TabIndex = 38;
+            this.LBL_USPOther.TabIndex = 105;
             this.LBL_USPOther.Text = "Other";
             // 
             // LBL_USPBarrel
@@ -1270,7 +1272,7 @@
             this.LBL_USPBarrel.Location = new System.Drawing.Point(8, 55);
             this.LBL_USPBarrel.Name = "LBL_USPBarrel";
             this.LBL_USPBarrel.Size = new System.Drawing.Size(36, 13);
-            this.LBL_USPBarrel.TabIndex = 37;
+            this.LBL_USPBarrel.TabIndex = 103;
             this.LBL_USPBarrel.Text = "Barrel";
             // 
             // LBL_USPSight
@@ -1279,7 +1281,7 @@
             this.LBL_USPSight.Location = new System.Drawing.Point(8, 24);
             this.LBL_USPSight.Name = "LBL_USPSight";
             this.LBL_USPSight.Size = new System.Drawing.Size(34, 13);
-            this.LBL_USPSight.TabIndex = 36;
+            this.LBL_USPSight.TabIndex = 101;
             this.LBL_USPSight.Text = "Sight";
             // 
             // GBOX_Epsilon11Rifle
@@ -1293,7 +1295,7 @@
             this.GBOX_Epsilon11Rifle.Location = new System.Drawing.Point(7, 15);
             this.GBOX_Epsilon11Rifle.Name = "GBOX_Epsilon11Rifle";
             this.GBOX_Epsilon11Rifle.Size = new System.Drawing.Size(291, 114);
-            this.GBOX_Epsilon11Rifle.TabIndex = 0;
+            this.GBOX_Epsilon11Rifle.TabIndex = 79;
             this.GBOX_Epsilon11Rifle.TabStop = false;
             this.GBOX_Epsilon11Rifle.Text = "Epsilon-11 Rifle Attachments";
             // 
@@ -1310,7 +1312,7 @@
             this.CBOX_E11Other.Location = new System.Drawing.Point(52, 82);
             this.CBOX_E11Other.Name = "CBOX_E11Other";
             this.CBOX_E11Other.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_E11Other.TabIndex = 29;
+            this.CBOX_E11Other.TabIndex = 85;
             // 
             // CBOX_E11Barrel
             // 
@@ -1325,7 +1327,7 @@
             this.CBOX_E11Barrel.Location = new System.Drawing.Point(52, 51);
             this.CBOX_E11Barrel.Name = "CBOX_E11Barrel";
             this.CBOX_E11Barrel.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_E11Barrel.TabIndex = 28;
+            this.CBOX_E11Barrel.TabIndex = 83;
             // 
             // CBOX_E11Sight
             // 
@@ -1340,7 +1342,7 @@
             this.CBOX_E11Sight.Location = new System.Drawing.Point(52, 19);
             this.CBOX_E11Sight.Name = "CBOX_E11Sight";
             this.CBOX_E11Sight.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_E11Sight.TabIndex = 27;
+            this.CBOX_E11Sight.TabIndex = 81;
             // 
             // LBL_E11Other
             // 
@@ -1348,7 +1350,7 @@
             this.LBL_E11Other.Location = new System.Drawing.Point(6, 85);
             this.LBL_E11Other.Name = "LBL_E11Other";
             this.LBL_E11Other.Size = new System.Drawing.Size(37, 13);
-            this.LBL_E11Other.TabIndex = 2;
+            this.LBL_E11Other.TabIndex = 84;
             this.LBL_E11Other.Text = "Other";
             // 
             // LBL_E11Barrel
@@ -1357,7 +1359,7 @@
             this.LBL_E11Barrel.Location = new System.Drawing.Point(6, 53);
             this.LBL_E11Barrel.Name = "LBL_E11Barrel";
             this.LBL_E11Barrel.Size = new System.Drawing.Size(36, 13);
-            this.LBL_E11Barrel.TabIndex = 1;
+            this.LBL_E11Barrel.TabIndex = 82;
             this.LBL_E11Barrel.Text = "Barrel";
             // 
             // LBL_E11Sight
@@ -1366,7 +1368,7 @@
             this.LBL_E11Sight.Location = new System.Drawing.Point(6, 22);
             this.LBL_E11Sight.Name = "LBL_E11Sight";
             this.LBL_E11Sight.Size = new System.Drawing.Size(34, 13);
-            this.LBL_E11Sight.TabIndex = 0;
+            this.LBL_E11Sight.TabIndex = 80;
             this.LBL_E11Sight.Text = "Sight";
             // 
             // GBOX_Project90SMG
@@ -1380,7 +1382,7 @@
             this.GBOX_Project90SMG.Location = new System.Drawing.Point(304, 15);
             this.GBOX_Project90SMG.Name = "GBOX_Project90SMG";
             this.GBOX_Project90SMG.Size = new System.Drawing.Size(291, 114);
-            this.GBOX_Project90SMG.TabIndex = 1;
+            this.GBOX_Project90SMG.TabIndex = 86;
             this.GBOX_Project90SMG.TabStop = false;
             this.GBOX_Project90SMG.Text = "Project 90 SMG Attachments";
             // 
@@ -1396,7 +1398,7 @@
             this.CBOX_Project90Other.Location = new System.Drawing.Point(53, 82);
             this.CBOX_Project90Other.Name = "CBOX_Project90Other";
             this.CBOX_Project90Other.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_Project90Other.TabIndex = 35;
+            this.CBOX_Project90Other.TabIndex = 92;
             // 
             // CBOX_Project90Barrel
             // 
@@ -1410,7 +1412,7 @@
             this.CBOX_Project90Barrel.Location = new System.Drawing.Point(53, 51);
             this.CBOX_Project90Barrel.Name = "CBOX_Project90Barrel";
             this.CBOX_Project90Barrel.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_Project90Barrel.TabIndex = 34;
+            this.CBOX_Project90Barrel.TabIndex = 90;
             // 
             // CBOX_Project90Sight
             // 
@@ -1423,7 +1425,7 @@
             this.CBOX_Project90Sight.Location = new System.Drawing.Point(53, 19);
             this.CBOX_Project90Sight.Name = "CBOX_Project90Sight";
             this.CBOX_Project90Sight.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_Project90Sight.TabIndex = 33;
+            this.CBOX_Project90Sight.TabIndex = 88;
             // 
             // LBL_Project90Other
             // 
@@ -1431,7 +1433,7 @@
             this.LBL_Project90Other.Location = new System.Drawing.Point(7, 85);
             this.LBL_Project90Other.Name = "LBL_Project90Other";
             this.LBL_Project90Other.Size = new System.Drawing.Size(37, 13);
-            this.LBL_Project90Other.TabIndex = 32;
+            this.LBL_Project90Other.TabIndex = 91;
             this.LBL_Project90Other.Text = "Other";
             // 
             // LBL_Project90Barrel
@@ -1440,7 +1442,7 @@
             this.LBL_Project90Barrel.Location = new System.Drawing.Point(7, 53);
             this.LBL_Project90Barrel.Name = "LBL_Project90Barrel";
             this.LBL_Project90Barrel.Size = new System.Drawing.Size(36, 13);
-            this.LBL_Project90Barrel.TabIndex = 31;
+            this.LBL_Project90Barrel.TabIndex = 89;
             this.LBL_Project90Barrel.Text = "Barrel";
             // 
             // LBL_Project90Sight
@@ -1449,7 +1451,7 @@
             this.LBL_Project90Sight.Location = new System.Drawing.Point(7, 22);
             this.LBL_Project90Sight.Name = "LBL_Project90Sight";
             this.LBL_Project90Sight.Size = new System.Drawing.Size(34, 13);
-            this.LBL_Project90Sight.TabIndex = 30;
+            this.LBL_Project90Sight.TabIndex = 87;
             this.LBL_Project90Sight.Text = "Sight";
             // 
             // GBOX_MP7SMG
@@ -1463,7 +1465,7 @@
             this.GBOX_MP7SMG.Location = new System.Drawing.Point(601, 15);
             this.GBOX_MP7SMG.Name = "GBOX_MP7SMG";
             this.GBOX_MP7SMG.Size = new System.Drawing.Size(291, 114);
-            this.GBOX_MP7SMG.TabIndex = 2;
+            this.GBOX_MP7SMG.TabIndex = 93;
             this.GBOX_MP7SMG.TabStop = false;
             this.GBOX_MP7SMG.Text = "MP7 SMG Attachments";
             // 
@@ -1477,7 +1479,7 @@
             this.CBOX_MP7Other.Location = new System.Drawing.Point(53, 82);
             this.CBOX_MP7Other.Name = "CBOX_MP7Other";
             this.CBOX_MP7Other.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_MP7Other.TabIndex = 35;
+            this.CBOX_MP7Other.TabIndex = 99;
             // 
             // CBOX_MP7Barrel
             // 
@@ -1489,7 +1491,7 @@
             this.CBOX_MP7Barrel.Location = new System.Drawing.Point(53, 51);
             this.CBOX_MP7Barrel.Name = "CBOX_MP7Barrel";
             this.CBOX_MP7Barrel.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_MP7Barrel.TabIndex = 34;
+            this.CBOX_MP7Barrel.TabIndex = 97;
             // 
             // CBOX_MP7Sight
             // 
@@ -1502,7 +1504,7 @@
             this.CBOX_MP7Sight.Location = new System.Drawing.Point(53, 19);
             this.CBOX_MP7Sight.Name = "CBOX_MP7Sight";
             this.CBOX_MP7Sight.Size = new System.Drawing.Size(228, 21);
-            this.CBOX_MP7Sight.TabIndex = 33;
+            this.CBOX_MP7Sight.TabIndex = 95;
             // 
             // LBL_MP7Other
             // 
@@ -1510,7 +1512,7 @@
             this.LBL_MP7Other.Location = new System.Drawing.Point(7, 85);
             this.LBL_MP7Other.Name = "LBL_MP7Other";
             this.LBL_MP7Other.Size = new System.Drawing.Size(37, 13);
-            this.LBL_MP7Other.TabIndex = 32;
+            this.LBL_MP7Other.TabIndex = 98;
             this.LBL_MP7Other.Text = "Other";
             // 
             // LBL_MP7Barrel
@@ -1519,7 +1521,7 @@
             this.LBL_MP7Barrel.Location = new System.Drawing.Point(7, 53);
             this.LBL_MP7Barrel.Name = "LBL_MP7Barrel";
             this.LBL_MP7Barrel.Size = new System.Drawing.Size(36, 13);
-            this.LBL_MP7Barrel.TabIndex = 31;
+            this.LBL_MP7Barrel.TabIndex = 96;
             this.LBL_MP7Barrel.Text = "Barrel";
             // 
             // LBL_MP7Sight
@@ -1528,7 +1530,7 @@
             this.LBL_MP7Sight.Location = new System.Drawing.Point(7, 22);
             this.LBL_MP7Sight.Name = "LBL_MP7Sight";
             this.LBL_MP7Sight.Size = new System.Drawing.Size(34, 13);
-            this.LBL_MP7Sight.TabIndex = 30;
+            this.LBL_MP7Sight.TabIndex = 94;
             this.LBL_MP7Sight.Text = "Sight";
             // 
             // FRM_MainPage
@@ -1557,10 +1559,17 @@
             this.GBOX_GameplaySettings.PerformLayout();
             this.GBOX_AudioSettings.ResumeLayout(false);
             this.GBOX_AudioSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_InterfaceVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MenuMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_VoiceChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_SoundEffects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_MasterVolume)).EndInit();
             this.GBOX_VideoSettings.ResumeLayout(false);
             this.GBOX_VideoSettings.PerformLayout();
             this.GBOX_InGameSettings.ResumeLayout(false);
             this.GBOX_InGameSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Sensitivty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Brightness)).EndInit();
             this.GBOX_WeaponSettings.ResumeLayout(false);
             this.GBOX_COM15Pistol.ResumeLayout(false);
             this.GBOX_COM15Pistol.PerformLayout();
@@ -1615,11 +1624,6 @@
         private System.Windows.Forms.Label LBL_VoiceChat;
         private System.Windows.Forms.Label LBL_SoundEffects;
         private System.Windows.Forms.Label LBL_MasterVolume;
-        private System.Windows.Forms.TextBox TBOX_InterfaceVolumeValue;
-        private System.Windows.Forms.TextBox TBOX_MenuMusicValue;
-        private System.Windows.Forms.TextBox TBOX_VoiceChatValue;
-        private System.Windows.Forms.TextBox TBOX_SoundEffectsVolume;
-        private System.Windows.Forms.TextBox TBOX_MasterVolumeValue;
         private System.Windows.Forms.ComboBox CBOX_MenuMusicTheme;
         private System.Windows.Forms.Label LBL_MenuTheme;
         private System.Windows.Forms.CheckBox CHK_SameMenuAndInterface;
@@ -1652,8 +1656,6 @@
         private System.Windows.Forms.CheckBox CHK_VSync;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox GBOX_InGameSettings;
-        private System.Windows.Forms.TextBox TBOX_Sensitivty;
-        private System.Windows.Forms.TextBox TBOX_Brightness;
         private System.Windows.Forms.Label LBL_Sensitivity;
         private System.Windows.Forms.Label LBL_Brightness;
         private System.Windows.Forms.CheckBox CHK_InvertYAxisChoice;
@@ -1694,6 +1696,13 @@
         private System.Windows.Forms.Label LBL_USPOther;
         private System.Windows.Forms.Label LBL_USPBarrel;
         private System.Windows.Forms.Label LBL_USPSight;
+        private System.Windows.Forms.NumericUpDown NUD_InterfaceVolume;
+        private System.Windows.Forms.NumericUpDown NUD_MenuMusic;
+        private System.Windows.Forms.NumericUpDown NUD_VoiceChat;
+        private System.Windows.Forms.NumericUpDown NUD_SoundEffects;
+        private System.Windows.Forms.NumericUpDown NUD_MasterVolume;
+        private System.Windows.Forms.NumericUpDown NUD_Sensitivty;
+        private System.Windows.Forms.NumericUpDown NUD_Brightness;
     }
 }
 
