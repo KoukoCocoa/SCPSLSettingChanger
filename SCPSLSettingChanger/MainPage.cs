@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SCPSLSettingChanger
@@ -44,9 +43,9 @@ namespace SCPSLSettingChanger
         {
             if (Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SCP Secret Laboratory")))
             {
-                PlayerPrefsSl.Set("gammavalue", (float) NUD_Brightness.Value * 0.02f);
-                if (((float) NUD_Sensitivty.Value * 0.03f) >= 0.1f)
-                    PlayerPrefsSl.Set("Sens", (float) NUD_Sensitivty.Value * 0.03f);
+                PlayerPrefsSl.Set("gammavalue", (float)NUD_Brightness.Value * 0.02f);
+                if (((float)NUD_Sensitivty.Value * 0.03f) >= 0.1f)
+                    PlayerPrefsSl.Set("Sens", (float)NUD_Sensitivty.Value * 0.03f);
                 else
                     PlayerPrefsSl.Set("Sens", 0.1f);
                 PlayerPrefsSl.Set("y_invert", CHK_InvertYAxisChoice.Checked);
@@ -64,7 +63,8 @@ namespace SCPSLSettingChanger
                 }
                 PlayerPrefsSl.Set("gfxsets_textures", CBOX_TextureQuality.SelectedIndex);
                 PlayerPrefsSl.Set("gfxsets_maxblood", CBOX_MaxBlood.SelectedIndex);
-                if (CHK_Shadows.Checked) {
+                if (CHK_Shadows.Checked)
+                {
                     PlayerPrefsSl.Set("gfxsets_shadows", CHK_Shadows.Checked);
                     PlayerPrefsSl.Set("gfxsets_shadres", CBOX_ShadowResolution.SelectedIndex);
                     PlayerPrefsSl.Set("gfxsets_shaddis_new", CBOX_ShadowDistance.SelectedIndex);
@@ -75,11 +75,11 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked);
                 PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked);
                 PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked);
-                PlayerPrefsSl.Set("AudioSettings_Master", (float) NUD_MasterVolume.Value * 0.01f);
-                PlayerPrefsSl.Set("AudioSettings_Effects", (float) NUD_SoundEffects.Value * 0.01f);
-                PlayerPrefsSl.Set("AudioSettings_VoiceChat", (float) NUD_VoiceChat.Value * 0.01f);
-                PlayerPrefsSl.Set("AudioSettings_MenuMusic", (float) NUD_MenuMusic.Value * 0.01f);
-                PlayerPrefsSl.Set("AudioSettings_Interface", (float) NUD_InterfaceVolume.Value * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_Master", (float)NUD_MasterVolume.Value * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_Effects", (float)NUD_SoundEffects.Value * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_VoiceChat", (float)NUD_VoiceChat.Value * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_MenuMusic", (float)NUD_MenuMusic.Value * 0.01f);
+                PlayerPrefsSl.Set("AudioSettings_Interface", (float)NUD_InterfaceVolume.Value * 0.01f);
                 PlayerPrefsSl.Set("MenuTheme", CBOX_MenuMusicTheme.SelectedIndex);
                 PlayerPrefsSl.Set("MaintainSliderProportions", CHK_SameMenuAndInterface.Checked);
                 PlayerPrefsSl.Set("ClassIntroFastFade", CHK_FastIntroFade.Checked);
@@ -107,7 +107,7 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("W_3_1", CBOX_MP7Barrel.SelectedIndex);
                 PlayerPrefsSl.Set("W_3_2", CBOX_MP7Other.SelectedIndex);
                 PlayerPrefsSl.Set("W_5_0", CBOX_USPSight.SelectedIndex);
-                PlayerPrefsSl.Set("W_5_1", CBOX_USPBarrel.SelectedIndex); 
+                PlayerPrefsSl.Set("W_5_1", CBOX_USPBarrel.SelectedIndex);
                 PlayerPrefsSl.Set("W_5_2", CBOX_USPOther.SelectedIndex);
                 PlayerPrefsSl.Set("W_0_0", CBOX_COM15Sight.SelectedIndex);
                 PlayerPrefsSl.Set("W_0_1", CBOX_COM15Barrel.SelectedIndex);
@@ -143,27 +143,42 @@ namespace SCPSLSettingChanger
 
         private void CHK_SameMenuAndInterface_CheckedChanged(object sender, EventArgs e)
         {
-            FormatInput();
+            FormatInput(true, 0);
         }
 
         private void NUD_MenuMusic_ValueChanged(object sender, EventArgs e)
         {
             if (CHK_SameMenuAndInterface.Checked)
-                FormatInput();
+                FormatInput(false, 1);
         }
 
         private void NUD_InterfaceVolume_ValueChanged(object sender, EventArgs e)
         {
             if (CHK_SameMenuAndInterface.Checked)
-                FormatInput();
+                FormatInput(false, 2);
         }
 
-        private void FormatInput()
+        private void FormatInput(bool UsedCheckbox, int choice)
         {
-            if (NUD_MenuMusic.Value < NUD_InterfaceVolume.Value)
-                NUD_MenuMusic.Value = NUD_InterfaceVolume.Value;
+            if (UsedCheckbox)
+            {
+                if (NUD_MenuMusic.Value < NUD_InterfaceVolume.Value)
+                    NUD_MenuMusic.Value = NUD_InterfaceVolume.Value;
+                else
+                    NUD_InterfaceVolume.Value = NUD_MenuMusic.Value;
+            }
             else
-                NUD_InterfaceVolume.Value = NUD_MenuMusic.Value;
+            {
+                switch (choice)
+                {
+                    case 1:
+                        NUD_InterfaceVolume.Value = NUD_MenuMusic.Value;
+                        break;
+                    case 2:
+                        NUD_MenuMusic.Value = NUD_InterfaceVolume.Value;
+                        break;
+                }
+            }
         }
 
         private void SaveValues()
@@ -239,11 +254,11 @@ namespace SCPSLSettingChanger
             CHK_ColorCorrection.Checked = SCPSLSettingChanger.Properties.Settings.Default.ColorCorrectionEnabled;
             CHK_AntiAliasing.Checked = SCPSLSettingChanger.Properties.Settings.Default.AntiAliasingEnabled;
             CHK_LightRenderingMode.Checked = SCPSLSettingChanger.Properties.Settings.Default.LightRenderingModeEnabled;
-            NUD_MasterVolume.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.MasterVolumeValue;
-            NUD_SoundEffects.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.SoundEffectsVolumeValue;
-            NUD_VoiceChat.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.VoiceChatVolumeValue;
-            NUD_MenuMusic.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.MenuMusicVolumeValue;
-            NUD_InterfaceVolume.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.InterfaceVolumeValue;
+            NUD_MasterVolume.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.MasterVolumeValue;
+            NUD_SoundEffects.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.SoundEffectsVolumeValue;
+            NUD_VoiceChat.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.VoiceChatVolumeValue;
+            NUD_MenuMusic.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.MenuMusicVolumeValue;
+            NUD_InterfaceVolume.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.InterfaceVolumeValue;
             CHK_SameMenuAndInterface.Checked = SCPSLSettingChanger.Properties.Settings.Default.SameMenuMusicAndInterfaceVolumeValueEnabled;
             CBOX_MenuMusicTheme.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MenuThemeChoice;
             CBOX_LanguageOptions.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.LanguageChoice;
@@ -261,8 +276,8 @@ namespace SCPSLSettingChanger
             CHK_ToggleSearch.Checked = SCPSLSettingChanger.Properties.Settings.Default.ToggleSearchEnabled;
             CHK_SCP079ToggleView.Checked = SCPSLSettingChanger.Properties.Settings.Default.SCP079ToggleViewEnabled;
             CHK_SCP079EnablePostProcessing.Checked = SCPSLSettingChanger.Properties.Settings.Default.SCP079EnablePostProcessingEnabled;
-            NUD_Brightness.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.BrightnessValue;
-            NUD_Sensitivty.Value = (decimal) SCPSLSettingChanger.Properties.Settings.Default.SensitivityValue;
+            NUD_Brightness.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.BrightnessValue;
+            NUD_Sensitivty.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.SensitivityValue;
             CHK_InvertYAxisChoice.Checked = SCPSLSettingChanger.Properties.Settings.Default.InvertYAxisEnabled;
             CBOX_E11Sight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.E11SightChoice;
             CBOX_E11Barrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.E11BarrelChoice;
