@@ -112,6 +112,7 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("W_0_0", CBOX_COM15Sight.SelectedIndex);
                 PlayerPrefsSl.Set("W_0_1", CBOX_COM15Barrel.SelectedIndex);
                 PlayerPrefsSl.Set("W_0_2", CBOX_COM15Other.SelectedIndex);
+                PlayerPrefsSl.Set("graphics_api", CBOX_GraphicsAPI.SelectedIndex);
                 MessageBox.Show("SCP:SL game settings have been changed now!", "Successfully written new file", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -236,6 +237,7 @@ namespace SCPSLSettingChanger
             SCPSLSettingChanger.Properties.Settings.Default.COM15SightChoice = CBOX_COM15Sight.SelectedIndex;
             SCPSLSettingChanger.Properties.Settings.Default.COM15BarrelChoice = CBOX_COM15Barrel.SelectedIndex;
             SCPSLSettingChanger.Properties.Settings.Default.COM15OtherChoice = CBOX_COM15Other.SelectedIndex;
+            SCPSLSettingChanger.Properties.Settings.Default.GraphicsAPIChoice = CBOX_GraphicsAPI.SelectedIndex;
             SCPSLSettingChanger.Properties.Settings.Default.Save();
         }
 
@@ -294,6 +296,7 @@ namespace SCPSLSettingChanger
             CBOX_COM15Sight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.COM15SightChoice;
             CBOX_COM15Barrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.COM15BarrelChoice;
             CBOX_COM15Other.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.COM15OtherChoice;
+            CBOX_GraphicsAPI.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.GraphicsAPIChoice;
         }
     }
 }

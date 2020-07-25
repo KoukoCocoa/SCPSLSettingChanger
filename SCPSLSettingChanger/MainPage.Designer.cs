@@ -76,6 +76,8 @@
             this.LBL_SoundEffects = new System.Windows.Forms.Label();
             this.LBL_MasterVolume = new System.Windows.Forms.Label();
             this.GBOX_VideoSettings = new System.Windows.Forms.GroupBox();
+            this.CBOX_GraphicsAPI = new System.Windows.Forms.ComboBox();
+            this.LBL_GraphicsAPI = new System.Windows.Forms.Label();
             this.CHK_LightRenderingMode = new System.Windows.Forms.CheckBox();
             this.LBL_LightRenderingMode = new System.Windows.Forms.Label();
             this.CHK_AntiAliasing = new System.Windows.Forms.CheckBox();
@@ -177,7 +179,7 @@
             this.GBOX_OtherSettings.Controls.Add(this.LBL_GameLanguage);
             this.GBOX_OtherSettings.Location = new System.Drawing.Point(286, 219);
             this.GBOX_OtherSettings.Name = "GBOX_OtherSettings";
-            this.GBOX_OtherSettings.Size = new System.Drawing.Size(306, 134);
+            this.GBOX_OtherSettings.Size = new System.Drawing.Size(306, 166);
             this.GBOX_OtherSettings.TabIndex = 41;
             this.GBOX_OtherSettings.TabStop = false;
             this.GBOX_OtherSettings.Text = "Other Settings";
@@ -185,10 +187,10 @@
             // CHK_DisplaySteamProfile
             // 
             this.CHK_DisplaySteamProfile.AutoSize = true;
-            this.CHK_DisplaySteamProfile.Location = new System.Drawing.Point(153, 79);
+            this.CHK_DisplaySteamProfile.Location = new System.Drawing.Point(153, 96);
             this.CHK_DisplaySteamProfile.Name = "CHK_DisplaySteamProfile";
             this.CHK_DisplaySteamProfile.Size = new System.Drawing.Size(106, 17);
-            this.CHK_DisplaySteamProfile.TabIndex = 47;
+            this.CHK_DisplaySteamProfile.TabIndex = 48;
             this.CHK_DisplaySteamProfile.Text = "Enable Setting?";
             this.CHK_DisplaySteamProfile.UseVisualStyleBackColor = true;
             // 
@@ -200,10 +202,10 @@
             "Classic",
             "Default",
             "Fast"});
-            this.CBOX_MenuOptions.Location = new System.Drawing.Point(92, 49);
+            this.CBOX_MenuOptions.Location = new System.Drawing.Point(92, 61);
             this.CBOX_MenuOptions.Name = "CBOX_MenuOptions";
             this.CBOX_MenuOptions.Size = new System.Drawing.Size(203, 21);
-            this.CBOX_MenuOptions.TabIndex = 45;
+            this.CBOX_MenuOptions.TabIndex = 46;
             // 
             // CBOX_LanguageOptions
             // 
@@ -237,18 +239,18 @@
             "Ukrainian",
             "Chinese Simplified",
             "Chinese Traditional"});
-            this.CBOX_LanguageOptions.Location = new System.Drawing.Point(92, 22);
+            this.CBOX_LanguageOptions.Location = new System.Drawing.Point(92, 29);
             this.CBOX_LanguageOptions.Name = "CBOX_LanguageOptions";
             this.CBOX_LanguageOptions.Size = new System.Drawing.Size(203, 21);
-            this.CBOX_LanguageOptions.TabIndex = 43;
+            this.CBOX_LanguageOptions.TabIndex = 44;
             // 
             // CHK_DoNotTrack
             // 
             this.CHK_DoNotTrack.AutoSize = true;
-            this.CHK_DoNotTrack.Location = new System.Drawing.Point(153, 104);
+            this.CHK_DoNotTrack.Location = new System.Drawing.Point(153, 126);
             this.CHK_DoNotTrack.Name = "CHK_DoNotTrack";
             this.CHK_DoNotTrack.Size = new System.Drawing.Size(106, 17);
-            this.CHK_DoNotTrack.TabIndex = 49;
+            this.CHK_DoNotTrack.TabIndex = 50;
             this.CHK_DoNotTrack.Text = "Enable Setting?";
             this.CHK_DoNotTrack.UseVisualStyleBackColor = true;
             // 
@@ -256,45 +258,45 @@
             // 
             this.LBL_DoNotTrack.AutoSize = true;
             this.LBL_DoNotTrack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_DoNotTrack.Location = new System.Drawing.Point(9, 104);
+            this.LBL_DoNotTrack.Location = new System.Drawing.Point(9, 126);
             this.LBL_DoNotTrack.Name = "LBL_DoNotTrack";
             this.LBL_DoNotTrack.Size = new System.Drawing.Size(109, 15);
-            this.LBL_DoNotTrack.TabIndex = 48;
+            this.LBL_DoNotTrack.TabIndex = 49;
             this.LBL_DoNotTrack.Text = "Do Not Track (DNT)";
             // 
             // LBL_DisplaySteamProfile
             // 
             this.LBL_DisplaySteamProfile.AutoSize = true;
             this.LBL_DisplaySteamProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_DisplaySteamProfile.Location = new System.Drawing.Point(9, 78);
+            this.LBL_DisplaySteamProfile.Location = new System.Drawing.Point(9, 95);
             this.LBL_DisplaySteamProfile.Name = "LBL_DisplaySteamProfile";
             this.LBL_DisplaySteamProfile.Size = new System.Drawing.Size(118, 15);
-            this.LBL_DisplaySteamProfile.TabIndex = 46;
+            this.LBL_DisplaySteamProfile.TabIndex = 47;
             this.LBL_DisplaySteamProfile.Text = "Display Steam Profile";
             // 
             // LBL_MainMenu
             // 
             this.LBL_MainMenu.AutoSize = true;
             this.LBL_MainMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_MainMenu.Location = new System.Drawing.Point(9, 52);
+            this.LBL_MainMenu.Location = new System.Drawing.Point(9, 64);
             this.LBL_MainMenu.Name = "LBL_MainMenu";
             this.LBL_MainMenu.Size = new System.Drawing.Size(68, 15);
-            this.LBL_MainMenu.TabIndex = 44;
+            this.LBL_MainMenu.TabIndex = 45;
             this.LBL_MainMenu.Text = "Main Menu";
             // 
             // LBL_GameLanguage
             // 
             this.LBL_GameLanguage.AutoSize = true;
             this.LBL_GameLanguage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_GameLanguage.Location = new System.Drawing.Point(9, 24);
+            this.LBL_GameLanguage.Location = new System.Drawing.Point(9, 31);
             this.LBL_GameLanguage.Name = "LBL_GameLanguage";
             this.LBL_GameLanguage.Size = new System.Drawing.Size(59, 15);
-            this.LBL_GameLanguage.TabIndex = 42;
+            this.LBL_GameLanguage.TabIndex = 43;
             this.LBL_GameLanguage.Text = "Language";
             // 
             // BTN_GenerateConfig
             // 
-            this.BTN_GenerateConfig.Location = new System.Drawing.Point(401, 616);
+            this.BTN_GenerateConfig.Location = new System.Drawing.Point(401, 654);
             this.BTN_GenerateConfig.Name = "BTN_GenerateConfig";
             this.BTN_GenerateConfig.Size = new System.Drawing.Size(123, 31);
             this.BTN_GenerateConfig.TabIndex = 114;
@@ -560,7 +562,7 @@
             this.NUD_InterfaceVolume.Location = new System.Drawing.Point(111, 125);
             this.NUD_InterfaceVolume.Name = "NUD_InterfaceVolume";
             this.NUD_InterfaceVolume.Size = new System.Drawing.Size(184, 22);
-            this.NUD_InterfaceVolume.TabIndex = 37;
+            this.NUD_InterfaceVolume.TabIndex = 38;
             this.NUD_InterfaceVolume.ValueChanged += new System.EventHandler(this.NUD_InterfaceVolume_ValueChanged);
             // 
             // NUD_MenuMusic
@@ -569,7 +571,7 @@
             this.NUD_MenuMusic.Location = new System.Drawing.Point(111, 97);
             this.NUD_MenuMusic.Name = "NUD_MenuMusic";
             this.NUD_MenuMusic.Size = new System.Drawing.Size(184, 22);
-            this.NUD_MenuMusic.TabIndex = 35;
+            this.NUD_MenuMusic.TabIndex = 36;
             this.NUD_MenuMusic.ValueChanged += new System.EventHandler(this.NUD_MenuMusic_ValueChanged);
             // 
             // NUD_VoiceChat
@@ -578,7 +580,7 @@
             this.NUD_VoiceChat.Location = new System.Drawing.Point(111, 70);
             this.NUD_VoiceChat.Name = "NUD_VoiceChat";
             this.NUD_VoiceChat.Size = new System.Drawing.Size(184, 22);
-            this.NUD_VoiceChat.TabIndex = 33;
+            this.NUD_VoiceChat.TabIndex = 34;
             // 
             // NUD_SoundEffects
             // 
@@ -586,7 +588,7 @@
             this.NUD_SoundEffects.Location = new System.Drawing.Point(111, 43);
             this.NUD_SoundEffects.Name = "NUD_SoundEffects";
             this.NUD_SoundEffects.Size = new System.Drawing.Size(184, 22);
-            this.NUD_SoundEffects.TabIndex = 31;
+            this.NUD_SoundEffects.TabIndex = 32;
             // 
             // NUD_MasterVolume
             // 
@@ -594,7 +596,7 @@
             this.NUD_MasterVolume.Location = new System.Drawing.Point(111, 17);
             this.NUD_MasterVolume.Name = "NUD_MasterVolume";
             this.NUD_MasterVolume.Size = new System.Drawing.Size(184, 22);
-            this.NUD_MasterVolume.TabIndex = 29;
+            this.NUD_MasterVolume.TabIndex = 30;
             // 
             // CHK_SameMenuAndInterface
             // 
@@ -602,7 +604,7 @@
             this.CHK_SameMenuAndInterface.Location = new System.Drawing.Point(195, 156);
             this.CHK_SameMenuAndInterface.Name = "CHK_SameMenuAndInterface";
             this.CHK_SameMenuAndInterface.Size = new System.Drawing.Size(106, 17);
-            this.CHK_SameMenuAndInterface.TabIndex = 38;
+            this.CHK_SameMenuAndInterface.TabIndex = 40;
             this.CHK_SameMenuAndInterface.Text = "Enable Setting?";
             this.CHK_SameMenuAndInterface.UseVisualStyleBackColor = true;
             this.CHK_SameMenuAndInterface.CheckedChanged += new System.EventHandler(this.CHK_SameMenuAndInterface_CheckedChanged);
@@ -614,7 +616,7 @@
             this.LBL_SameMenuAndInterface.Location = new System.Drawing.Point(9, 155);
             this.LBL_SameMenuAndInterface.Name = "LBL_SameMenuAndInterface";
             this.LBL_SameMenuAndInterface.Size = new System.Drawing.Size(173, 15);
-            this.LBL_SameMenuAndInterface.TabIndex = 37;
+            this.LBL_SameMenuAndInterface.TabIndex = 39;
             this.LBL_SameMenuAndInterface.Text = "Same Menu + Interface Volume";
             // 
             // CBOX_MenuMusicTheme
@@ -629,7 +631,7 @@
             this.CBOX_MenuMusicTheme.Location = new System.Drawing.Point(92, 178);
             this.CBOX_MenuMusicTheme.Name = "CBOX_MenuMusicTheme";
             this.CBOX_MenuMusicTheme.Size = new System.Drawing.Size(203, 21);
-            this.CBOX_MenuMusicTheme.TabIndex = 40;
+            this.CBOX_MenuMusicTheme.TabIndex = 42;
             // 
             // LBL_MenuTheme
             // 
@@ -638,7 +640,7 @@
             this.LBL_MenuTheme.Location = new System.Drawing.Point(9, 181);
             this.LBL_MenuTheme.Name = "LBL_MenuTheme";
             this.LBL_MenuTheme.Size = new System.Drawing.Size(77, 15);
-            this.LBL_MenuTheme.TabIndex = 39;
+            this.LBL_MenuTheme.TabIndex = 41;
             this.LBL_MenuTheme.Text = "Menu Theme";
             // 
             // LBL_InterfaceVolume
@@ -648,7 +650,7 @@
             this.LBL_InterfaceVolume.Location = new System.Drawing.Point(9, 127);
             this.LBL_InterfaceVolume.Name = "LBL_InterfaceVolume";
             this.LBL_InterfaceVolume.Size = new System.Drawing.Size(96, 15);
-            this.LBL_InterfaceVolume.TabIndex = 35;
+            this.LBL_InterfaceVolume.TabIndex = 37;
             this.LBL_InterfaceVolume.Text = "Interface Volume";
             // 
             // LBL_MenuMusic
@@ -658,7 +660,7 @@
             this.LBL_MenuMusic.Location = new System.Drawing.Point(9, 99);
             this.LBL_MenuMusic.Name = "LBL_MenuMusic";
             this.LBL_MenuMusic.Size = new System.Drawing.Size(73, 15);
-            this.LBL_MenuMusic.TabIndex = 33;
+            this.LBL_MenuMusic.TabIndex = 35;
             this.LBL_MenuMusic.Text = "Menu Music";
             // 
             // LBL_VoiceChat
@@ -668,7 +670,7 @@
             this.LBL_VoiceChat.Location = new System.Drawing.Point(9, 73);
             this.LBL_VoiceChat.Name = "LBL_VoiceChat";
             this.LBL_VoiceChat.Size = new System.Drawing.Size(63, 15);
-            this.LBL_VoiceChat.TabIndex = 21;
+            this.LBL_VoiceChat.TabIndex = 33;
             this.LBL_VoiceChat.Text = "Voice Chat";
             // 
             // LBL_SoundEffects
@@ -678,7 +680,7 @@
             this.LBL_SoundEffects.Location = new System.Drawing.Point(9, 47);
             this.LBL_SoundEffects.Name = "LBL_SoundEffects";
             this.LBL_SoundEffects.Size = new System.Drawing.Size(79, 15);
-            this.LBL_SoundEffects.TabIndex = 30;
+            this.LBL_SoundEffects.TabIndex = 31;
             this.LBL_SoundEffects.Text = "Sound Effects";
             // 
             // LBL_MasterVolume
@@ -688,11 +690,13 @@
             this.LBL_MasterVolume.Location = new System.Drawing.Point(9, 21);
             this.LBL_MasterVolume.Name = "LBL_MasterVolume";
             this.LBL_MasterVolume.Size = new System.Drawing.Size(86, 15);
-            this.LBL_MasterVolume.TabIndex = 28;
+            this.LBL_MasterVolume.TabIndex = 29;
             this.LBL_MasterVolume.Text = "Master Volume";
             // 
             // GBOX_VideoSettings
             // 
+            this.GBOX_VideoSettings.Controls.Add(this.CBOX_GraphicsAPI);
+            this.GBOX_VideoSettings.Controls.Add(this.LBL_GraphicsAPI);
             this.GBOX_VideoSettings.Controls.Add(this.CHK_LightRenderingMode);
             this.GBOX_VideoSettings.Controls.Add(this.LBL_LightRenderingMode);
             this.GBOX_VideoSettings.Controls.Add(this.CHK_AntiAliasing);
@@ -721,15 +725,40 @@
             this.GBOX_VideoSettings.Controls.Add(this.LBL_ScreenResolution);
             this.GBOX_VideoSettings.Location = new System.Drawing.Point(6, 5);
             this.GBOX_VideoSettings.Name = "GBOX_VideoSettings";
-            this.GBOX_VideoSettings.Size = new System.Drawing.Size(275, 348);
+            this.GBOX_VideoSettings.Size = new System.Drawing.Size(275, 380);
             this.GBOX_VideoSettings.TabIndex = 0;
             this.GBOX_VideoSettings.TabStop = false;
             this.GBOX_VideoSettings.Text = "Video Settings";
             // 
+            // CBOX_GraphicsAPI
+            // 
+            this.CBOX_GraphicsAPI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOX_GraphicsAPI.FormattingEnabled = true;
+            this.CBOX_GraphicsAPI.Items.AddRange(new object[] {
+            "Default/Auto",
+            "DX11 (Recommended)",
+            "DX12 (Experimental)",
+            "OpenGL",
+            "Vulkan (Experimental)"});
+            this.CBOX_GraphicsAPI.Location = new System.Drawing.Point(120, 346);
+            this.CBOX_GraphicsAPI.Name = "CBOX_GraphicsAPI";
+            this.CBOX_GraphicsAPI.Size = new System.Drawing.Size(148, 21);
+            this.CBOX_GraphicsAPI.TabIndex = 28;
+            // 
+            // LBL_GraphicsAPI
+            // 
+            this.LBL_GraphicsAPI.AutoSize = true;
+            this.LBL_GraphicsAPI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_GraphicsAPI.Location = new System.Drawing.Point(5, 348);
+            this.LBL_GraphicsAPI.Name = "LBL_GraphicsAPI";
+            this.LBL_GraphicsAPI.Size = new System.Drawing.Size(74, 15);
+            this.LBL_GraphicsAPI.TabIndex = 27;
+            this.LBL_GraphicsAPI.Text = "Graphics API";
+            // 
             // CHK_LightRenderingMode
             // 
             this.CHK_LightRenderingMode.AutoSize = true;
-            this.CHK_LightRenderingMode.Location = new System.Drawing.Point(147, 324);
+            this.CHK_LightRenderingMode.Location = new System.Drawing.Point(147, 322);
             this.CHK_LightRenderingMode.Name = "CHK_LightRenderingMode";
             this.CHK_LightRenderingMode.Size = new System.Drawing.Size(106, 17);
             this.CHK_LightRenderingMode.TabIndex = 26;
@@ -740,7 +769,7 @@
             // 
             this.LBL_LightRenderingMode.AutoSize = true;
             this.LBL_LightRenderingMode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_LightRenderingMode.Location = new System.Drawing.Point(6, 323);
+            this.LBL_LightRenderingMode.Location = new System.Drawing.Point(6, 322);
             this.LBL_LightRenderingMode.Name = "LBL_LightRenderingMode";
             this.LBL_LightRenderingMode.Size = new System.Drawing.Size(125, 15);
             this.LBL_LightRenderingMode.TabIndex = 25;
@@ -749,7 +778,7 @@
             // CHK_AntiAliasing
             // 
             this.CHK_AntiAliasing.AutoSize = true;
-            this.CHK_AntiAliasing.Location = new System.Drawing.Point(147, 301);
+            this.CHK_AntiAliasing.Location = new System.Drawing.Point(147, 298);
             this.CHK_AntiAliasing.Name = "CHK_AntiAliasing";
             this.CHK_AntiAliasing.Size = new System.Drawing.Size(106, 17);
             this.CHK_AntiAliasing.TabIndex = 24;
@@ -760,7 +789,7 @@
             // 
             this.LBL_AntiAliasing.AutoSize = true;
             this.LBL_AntiAliasing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_AntiAliasing.Location = new System.Drawing.Point(6, 300);
+            this.LBL_AntiAliasing.Location = new System.Drawing.Point(6, 298);
             this.LBL_AntiAliasing.Name = "LBL_AntiAliasing";
             this.LBL_AntiAliasing.Size = new System.Drawing.Size(74, 15);
             this.LBL_AntiAliasing.TabIndex = 23;
@@ -769,7 +798,7 @@
             // CHK_ColorCorrection
             // 
             this.CHK_ColorCorrection.AutoSize = true;
-            this.CHK_ColorCorrection.Location = new System.Drawing.Point(147, 277);
+            this.CHK_ColorCorrection.Location = new System.Drawing.Point(147, 274);
             this.CHK_ColorCorrection.Name = "CHK_ColorCorrection";
             this.CHK_ColorCorrection.Size = new System.Drawing.Size(106, 17);
             this.CHK_ColorCorrection.TabIndex = 22;
@@ -780,7 +809,7 @@
             // 
             this.LBL_ColorCorrection.AutoSize = true;
             this.LBL_ColorCorrection.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_ColorCorrection.Location = new System.Drawing.Point(6, 276);
+            this.LBL_ColorCorrection.Location = new System.Drawing.Point(6, 274);
             this.LBL_ColorCorrection.Name = "LBL_ColorCorrection";
             this.LBL_ColorCorrection.Size = new System.Drawing.Size(95, 15);
             this.LBL_ColorCorrection.TabIndex = 21;
@@ -789,7 +818,7 @@
             // CHK_MotionBlur
             // 
             this.CHK_MotionBlur.AutoSize = true;
-            this.CHK_MotionBlur.Location = new System.Drawing.Point(147, 253);
+            this.CHK_MotionBlur.Location = new System.Drawing.Point(147, 252);
             this.CHK_MotionBlur.Name = "CHK_MotionBlur";
             this.CHK_MotionBlur.Size = new System.Drawing.Size(106, 17);
             this.CHK_MotionBlur.TabIndex = 20;
@@ -800,7 +829,7 @@
             // 
             this.LBL_MotionBlur.AutoSize = true;
             this.LBL_MotionBlur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_MotionBlur.Location = new System.Drawing.Point(6, 252);
+            this.LBL_MotionBlur.Location = new System.Drawing.Point(6, 251);
             this.LBL_MotionBlur.Name = "LBL_MotionBlur";
             this.LBL_MotionBlur.Size = new System.Drawing.Size(70, 15);
             this.LBL_MotionBlur.TabIndex = 19;
@@ -1053,7 +1082,7 @@
             this.GBOX_InGameSettings.Controls.Add(this.LBL_Brightness);
             this.GBOX_InGameSettings.Location = new System.Drawing.Point(596, 261);
             this.GBOX_InGameSettings.Name = "GBOX_InGameSettings";
-            this.GBOX_InGameSettings.Size = new System.Drawing.Size(309, 92);
+            this.GBOX_InGameSettings.Size = new System.Drawing.Size(309, 124);
             this.GBOX_InGameSettings.TabIndex = 71;
             this.GBOX_InGameSettings.TabStop = false;
             this.GBOX_InGameSettings.Text = "In-Game Settings";
@@ -1061,7 +1090,7 @@
             // NUD_Sensitivty
             // 
             this.NUD_Sensitivty.DecimalPlaces = 3;
-            this.NUD_Sensitivty.Location = new System.Drawing.Point(108, 43);
+            this.NUD_Sensitivty.Location = new System.Drawing.Point(108, 57);
             this.NUD_Sensitivty.Name = "NUD_Sensitivty";
             this.NUD_Sensitivty.Size = new System.Drawing.Size(184, 22);
             this.NUD_Sensitivty.TabIndex = 75;
@@ -1069,7 +1098,7 @@
             // CHK_InvertYAxisChoice
             // 
             this.CHK_InvertYAxisChoice.AutoSize = true;
-            this.CHK_InvertYAxisChoice.Location = new System.Drawing.Point(143, 70);
+            this.CHK_InvertYAxisChoice.Location = new System.Drawing.Point(143, 90);
             this.CHK_InvertYAxisChoice.Name = "CHK_InvertYAxisChoice";
             this.CHK_InvertYAxisChoice.Size = new System.Drawing.Size(106, 17);
             this.CHK_InvertYAxisChoice.TabIndex = 77;
@@ -1079,7 +1108,7 @@
             // NUD_Brightness
             // 
             this.NUD_Brightness.DecimalPlaces = 3;
-            this.NUD_Brightness.Location = new System.Drawing.Point(108, 16);
+            this.NUD_Brightness.Location = new System.Drawing.Point(108, 25);
             this.NUD_Brightness.Name = "NUD_Brightness";
             this.NUD_Brightness.Size = new System.Drawing.Size(184, 22);
             this.NUD_Brightness.TabIndex = 73;
@@ -1088,7 +1117,7 @@
             // 
             this.LBL_InvertYAxis.AutoSize = true;
             this.LBL_InvertYAxis.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_InvertYAxis.Location = new System.Drawing.Point(10, 68);
+            this.LBL_InvertYAxis.Location = new System.Drawing.Point(10, 88);
             this.LBL_InvertYAxis.Name = "LBL_InvertYAxis";
             this.LBL_InvertYAxis.Size = new System.Drawing.Size(74, 15);
             this.LBL_InvertYAxis.TabIndex = 76;
@@ -1098,7 +1127,7 @@
             // 
             this.LBL_Sensitivity.AutoSize = true;
             this.LBL_Sensitivity.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Sensitivity.Location = new System.Drawing.Point(11, 43);
+            this.LBL_Sensitivity.Location = new System.Drawing.Point(11, 58);
             this.LBL_Sensitivity.Name = "LBL_Sensitivity";
             this.LBL_Sensitivity.Size = new System.Drawing.Size(60, 15);
             this.LBL_Sensitivity.TabIndex = 74;
@@ -1108,7 +1137,7 @@
             // 
             this.LBL_Brightness.AutoSize = true;
             this.LBL_Brightness.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_Brightness.Location = new System.Drawing.Point(11, 19);
+            this.LBL_Brightness.Location = new System.Drawing.Point(11, 28);
             this.LBL_Brightness.Name = "LBL_Brightness";
             this.LBL_Brightness.Size = new System.Drawing.Size(62, 15);
             this.LBL_Brightness.TabIndex = 72;
@@ -1121,7 +1150,7 @@
             this.GBOX_WeaponSettings.Controls.Add(this.GBOX_Epsilon11Rifle);
             this.GBOX_WeaponSettings.Controls.Add(this.GBOX_Project90SMG);
             this.GBOX_WeaponSettings.Controls.Add(this.GBOX_MP7SMG);
-            this.GBOX_WeaponSettings.Location = new System.Drawing.Point(6, 352);
+            this.GBOX_WeaponSettings.Location = new System.Drawing.Point(6, 391);
             this.GBOX_WeaponSettings.Name = "GBOX_WeaponSettings";
             this.GBOX_WeaponSettings.Size = new System.Drawing.Size(899, 252);
             this.GBOX_WeaponSettings.TabIndex = 78;
@@ -1537,7 +1566,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 659);
+            this.ClientSize = new System.Drawing.Size(912, 695);
             this.Controls.Add(this.GBOX_WeaponSettings);
             this.Controls.Add(this.GBOX_InGameSettings);
             this.Controls.Add(this.GBOX_VideoSettings);
@@ -1703,6 +1732,8 @@
         private System.Windows.Forms.NumericUpDown NUD_MasterVolume;
         private System.Windows.Forms.NumericUpDown NUD_Sensitivty;
         private System.Windows.Forms.NumericUpDown NUD_Brightness;
+        private System.Windows.Forms.ComboBox CBOX_GraphicsAPI;
+        private System.Windows.Forms.Label LBL_GraphicsAPI;
     }
 }
 

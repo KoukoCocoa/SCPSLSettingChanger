@@ -646,5 +646,17 @@ namespace SCPSLSettingChanger.Properties {
                 this["COM15OtherChoice"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int GraphicsAPIChoice {
+            get {
+                return ((int)(this["GraphicsAPIChoice"]));
+            }
+            set {
+                this["GraphicsAPIChoice"] = value;
+            }
+        }
     }
 }
