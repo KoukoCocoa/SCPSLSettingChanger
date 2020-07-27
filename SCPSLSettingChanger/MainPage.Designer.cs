@@ -296,7 +296,7 @@
             // 
             // BTN_GenerateConfig
             // 
-            this.BTN_GenerateConfig.Location = new System.Drawing.Point(401, 654);
+            this.BTN_GenerateConfig.Location = new System.Drawing.Point(401, 648);
             this.BTN_GenerateConfig.Name = "BTN_GenerateConfig";
             this.BTN_GenerateConfig.Size = new System.Drawing.Size(123, 31);
             this.BTN_GenerateConfig.TabIndex = 114;
@@ -1046,7 +1046,9 @@
             "1600 x 1024",
             "1680 x 1050",
             "1768 x 992",
-            "1920 x 1080"});
+            "1920 x 1080",
+            "2560 x 1080",
+            "2560 x 1440"});
             this.CBOX_ScreenResolution.Location = new System.Drawing.Point(120, 21);
             this.CBOX_ScreenResolution.Name = "CBOX_ScreenResolution";
             this.CBOX_ScreenResolution.Size = new System.Drawing.Size(148, 21);
@@ -1150,7 +1152,7 @@
             this.GBOX_WeaponSettings.Controls.Add(this.GBOX_Epsilon11Rifle);
             this.GBOX_WeaponSettings.Controls.Add(this.GBOX_Project90SMG);
             this.GBOX_WeaponSettings.Controls.Add(this.GBOX_MP7SMG);
-            this.GBOX_WeaponSettings.Location = new System.Drawing.Point(6, 391);
+            this.GBOX_WeaponSettings.Location = new System.Drawing.Point(6, 387);
             this.GBOX_WeaponSettings.Name = "GBOX_WeaponSettings";
             this.GBOX_WeaponSettings.Size = new System.Drawing.Size(899, 252);
             this.GBOX_WeaponSettings.TabIndex = 78;
@@ -1566,7 +1568,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 695);
+            this.ClientSize = new System.Drawing.Size(912, 688);
             this.Controls.Add(this.GBOX_WeaponSettings);
             this.Controls.Add(this.GBOX_InGameSettings);
             this.Controls.Add(this.GBOX_VideoSettings);

@@ -265,7 +265,7 @@ namespace SCPSLSettingChanger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int LanguageChoice {
             get {
                 return ((int)(this["LanguageChoice"]));
@@ -277,7 +277,7 @@ namespace SCPSLSettingChanger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int MainMenuChoice {
             get {
                 return ((int)(this["MainMenuChoice"]));

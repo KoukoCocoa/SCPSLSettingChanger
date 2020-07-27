@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SCPSLSettingChanger
@@ -18,20 +20,6 @@ namespace SCPSLSettingChanger
         private void FRM_MainPage_Load(object sender, EventArgs e)
         {
             LoadValues();
-            if (CHK_VSync.Checked)
-                CBOX_FPSLimit.Enabled = false;
-            else
-                CBOX_FPSLimit.Enabled = true;
-            if (CHK_Shadows.Checked)
-            {
-                CBOX_ShadowResolution.Enabled = true;
-                CBOX_ShadowDistance.Enabled = true;
-            }
-            else
-            {
-                CBOX_ShadowResolution.Enabled = false;
-                CBOX_ShadowDistance.Enabled = false;
-            }
         }
 
         private void FRM_MainPage_FormClosing(object sender, FormClosingEventArgs e)
@@ -74,6 +62,7 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("gfxsets_mb", CHK_VSync.Checked);
                 PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked);
                 PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked);
+                PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked);
                 PlayerPrefsSl.Set("AudioSettings_Master", (float)NUD_MasterVolume.Value * 0.01f);
                 PlayerPrefsSl.Set("AudioSettings_Effects", (float)NUD_SoundEffects.Value * 0.01f);
@@ -243,6 +232,32 @@ namespace SCPSLSettingChanger
 
         private void LoadValues()
         {
+            CultureInfo OS = CultureInfo.CurrentUICulture;
+            string OSName = OS.DisplayName.Substring(0, OS.DisplayName.IndexOf(' '));
+            bool FoundOSInList = false;
+            for (int i = 0; i < CBOX_LanguageOptions.Items.Count; i++)
+                if (CBOX_LanguageOptions.Items[i].ToString().Contains(OSName))
+                {
+                    CBOX_LanguageOptions.SelectedIndex = i;
+                    FoundOSInList = true;
+                    break;
+                }
+            if (!FoundOSInList)
+                CBOX_LanguageOptions.SelectedIndex = 5;
+            if (CHK_VSync.Checked)
+                CBOX_FPSLimit.Enabled = false;
+            else
+                CBOX_FPSLimit.Enabled = true;
+            if (CHK_Shadows.Checked)
+            {
+                CBOX_ShadowResolution.Enabled = true;
+                CBOX_ShadowDistance.Enabled = true;
+            }
+            else
+            {
+                CBOX_ShadowResolution.Enabled = false;
+                CBOX_ShadowDistance.Enabled = false;
+            }
             CBOX_ScreenResolution.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.ScreenResolutionChoice;
             CBOX_WindowMode.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.WindowModeChoice;
             CHK_VSync.Checked = SCPSLSettingChanger.Properties.Settings.Default.VSyncEnabled;
