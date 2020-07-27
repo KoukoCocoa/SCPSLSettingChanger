@@ -1047,6 +1047,8 @@
             "1680 x 1050",
             "1768 x 992",
             "1920 x 1080",
+            "1920 x 1200",
+            "1920 x 1440",
             "2560 x 1080",
             "2560 x 1440"});
             this.CBOX_ScreenResolution.Location = new System.Drawing.Point(120, 21);
