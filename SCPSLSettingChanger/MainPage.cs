@@ -65,7 +65,7 @@ namespace SCPSLSettingChanger
                 }
                 PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked);
-                PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked ? 0 : 1);
+                PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked ? 1 : 0);
                 PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked);
                 PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked);
