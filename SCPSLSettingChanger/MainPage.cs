@@ -53,14 +53,21 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("gfxsets_maxblood", CBOX_MaxBlood.SelectedIndex);
                 if (CHK_Shadows.Checked)
                 {
+                    PlayerPrefsSl.Set("gfxsets_shadows", 1);
                     PlayerPrefsSl.Set("gfxsets_shadows", CHK_Shadows.Checked);
                     PlayerPrefsSl.Set("gfxsets_shadres", CBOX_ShadowResolution.SelectedIndex);
                     PlayerPrefsSl.Set("gfxsets_shaddis_new", CBOX_ShadowDistance.SelectedIndex);
                 }
                 else
+                {
+                    PlayerPrefsSl.Set("gfxsets_shadows", 0);
                     PlayerPrefsSl.Set("gfxsets_shadows", CHK_Shadows.Checked);
-                PlayerPrefsSl.Set("gfxsets_mb", CHK_VSync.Checked);
+                }
+                PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked ? 0 : 1);
+                PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked);
+                PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked);
+                PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked);
                 PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked);
