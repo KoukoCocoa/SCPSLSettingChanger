@@ -31,12 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_MainPage));
             this.GBOX_OtherSettings = new System.Windows.Forms.GroupBox();
             this.CHK_DisplaySteamProfile = new System.Windows.Forms.CheckBox();
-            this.CBOX_MenuOptions = new System.Windows.Forms.ComboBox();
             this.CBOX_LanguageOptions = new System.Windows.Forms.ComboBox();
             this.CHK_DoNotTrack = new System.Windows.Forms.CheckBox();
             this.LBL_DoNotTrack = new System.Windows.Forms.Label();
             this.LBL_DisplaySteamProfile = new System.Windows.Forms.Label();
-            this.LBL_MainMenu = new System.Windows.Forms.Label();
             this.LBL_GameLanguage = new System.Windows.Forms.Label();
             this.BTN_GenerateConfig = new System.Windows.Forms.Button();
             this.GBOX_GameplaySettings = new System.Windows.Forms.GroupBox();
@@ -170,12 +168,10 @@
             // GBOX_OtherSettings
             // 
             this.GBOX_OtherSettings.Controls.Add(this.CHK_DisplaySteamProfile);
-            this.GBOX_OtherSettings.Controls.Add(this.CBOX_MenuOptions);
             this.GBOX_OtherSettings.Controls.Add(this.CBOX_LanguageOptions);
             this.GBOX_OtherSettings.Controls.Add(this.CHK_DoNotTrack);
             this.GBOX_OtherSettings.Controls.Add(this.LBL_DoNotTrack);
             this.GBOX_OtherSettings.Controls.Add(this.LBL_DisplaySteamProfile);
-            this.GBOX_OtherSettings.Controls.Add(this.LBL_MainMenu);
             this.GBOX_OtherSettings.Controls.Add(this.LBL_GameLanguage);
             this.GBOX_OtherSettings.Location = new System.Drawing.Point(286, 219);
             this.GBOX_OtherSettings.Name = "GBOX_OtherSettings";
@@ -187,25 +183,12 @@
             // CHK_DisplaySteamProfile
             // 
             this.CHK_DisplaySteamProfile.AutoSize = true;
-            this.CHK_DisplaySteamProfile.Location = new System.Drawing.Point(153, 96);
+            this.CHK_DisplaySteamProfile.Location = new System.Drawing.Point(154, 77);
             this.CHK_DisplaySteamProfile.Name = "CHK_DisplaySteamProfile";
             this.CHK_DisplaySteamProfile.Size = new System.Drawing.Size(106, 17);
             this.CHK_DisplaySteamProfile.TabIndex = 48;
             this.CHK_DisplaySteamProfile.Text = "Enable Setting?";
             this.CHK_DisplaySteamProfile.UseVisualStyleBackColor = true;
-            // 
-            // CBOX_MenuOptions
-            // 
-            this.CBOX_MenuOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBOX_MenuOptions.FormattingEnabled = true;
-            this.CBOX_MenuOptions.Items.AddRange(new object[] {
-            "Classic",
-            "Default",
-            "Fast"});
-            this.CBOX_MenuOptions.Location = new System.Drawing.Point(92, 61);
-            this.CBOX_MenuOptions.Name = "CBOX_MenuOptions";
-            this.CBOX_MenuOptions.Size = new System.Drawing.Size(203, 21);
-            this.CBOX_MenuOptions.TabIndex = 46;
             // 
             // CBOX_LanguageOptions
             // 
@@ -239,7 +222,7 @@
             "Ukrainian",
             "Chinese Simplified",
             "Chinese Traditional"});
-            this.CBOX_LanguageOptions.Location = new System.Drawing.Point(92, 29);
+            this.CBOX_LanguageOptions.Location = new System.Drawing.Point(92, 42);
             this.CBOX_LanguageOptions.Name = "CBOX_LanguageOptions";
             this.CBOX_LanguageOptions.Size = new System.Drawing.Size(203, 21);
             this.CBOX_LanguageOptions.TabIndex = 44;
@@ -247,7 +230,7 @@
             // CHK_DoNotTrack
             // 
             this.CHK_DoNotTrack.AutoSize = true;
-            this.CHK_DoNotTrack.Location = new System.Drawing.Point(153, 126);
+            this.CHK_DoNotTrack.Location = new System.Drawing.Point(154, 107);
             this.CHK_DoNotTrack.Name = "CHK_DoNotTrack";
             this.CHK_DoNotTrack.Size = new System.Drawing.Size(106, 17);
             this.CHK_DoNotTrack.TabIndex = 50;
@@ -258,7 +241,7 @@
             // 
             this.LBL_DoNotTrack.AutoSize = true;
             this.LBL_DoNotTrack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_DoNotTrack.Location = new System.Drawing.Point(9, 126);
+            this.LBL_DoNotTrack.Location = new System.Drawing.Point(10, 107);
             this.LBL_DoNotTrack.Name = "LBL_DoNotTrack";
             this.LBL_DoNotTrack.Size = new System.Drawing.Size(109, 15);
             this.LBL_DoNotTrack.TabIndex = 49;
@@ -268,27 +251,17 @@
             // 
             this.LBL_DisplaySteamProfile.AutoSize = true;
             this.LBL_DisplaySteamProfile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_DisplaySteamProfile.Location = new System.Drawing.Point(9, 95);
+            this.LBL_DisplaySteamProfile.Location = new System.Drawing.Point(10, 76);
             this.LBL_DisplaySteamProfile.Name = "LBL_DisplaySteamProfile";
             this.LBL_DisplaySteamProfile.Size = new System.Drawing.Size(118, 15);
             this.LBL_DisplaySteamProfile.TabIndex = 47;
             this.LBL_DisplaySteamProfile.Text = "Display Steam Profile";
             // 
-            // LBL_MainMenu
-            // 
-            this.LBL_MainMenu.AutoSize = true;
-            this.LBL_MainMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_MainMenu.Location = new System.Drawing.Point(9, 64);
-            this.LBL_MainMenu.Name = "LBL_MainMenu";
-            this.LBL_MainMenu.Size = new System.Drawing.Size(68, 15);
-            this.LBL_MainMenu.TabIndex = 45;
-            this.LBL_MainMenu.Text = "Main Menu";
-            // 
             // LBL_GameLanguage
             // 
             this.LBL_GameLanguage.AutoSize = true;
             this.LBL_GameLanguage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_GameLanguage.Location = new System.Drawing.Point(9, 31);
+            this.LBL_GameLanguage.Location = new System.Drawing.Point(9, 44);
             this.LBL_GameLanguage.Name = "LBL_GameLanguage";
             this.LBL_GameLanguage.Size = new System.Drawing.Size(59, 15);
             this.LBL_GameLanguage.TabIndex = 43;
@@ -771,9 +744,9 @@
             this.LBL_LightRenderingMode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_LightRenderingMode.Location = new System.Drawing.Point(6, 322);
             this.LBL_LightRenderingMode.Name = "LBL_LightRenderingMode";
-            this.LBL_LightRenderingMode.Size = new System.Drawing.Size(125, 15);
+            this.LBL_LightRenderingMode.Size = new System.Drawing.Size(79, 15);
             this.LBL_LightRenderingMode.TabIndex = 25;
-            this.LBL_LightRenderingMode.Text = "Light Rendering Mode";
+            this.LBL_LightRenderingMode.Text = "Render Lights";
             // 
             // CHK_AntiAliasing
             // 
@@ -1584,7 +1557,6 @@
             this.MaximizeBox = false;
             this.Name = "FRM_MainPage";
             this.Text = "SCP:SL Setting Changer | By KoukoCocoa";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_MainPage_FormClosing);
             this.Load += new System.EventHandler(this.FRM_MainPage_Load);
             this.GBOX_OtherSettings.ResumeLayout(false);
             this.GBOX_OtherSettings.PerformLayout();
@@ -1622,12 +1594,10 @@
 
         private System.Windows.Forms.GroupBox GBOX_OtherSettings;
         private System.Windows.Forms.CheckBox CHK_DisplaySteamProfile;
-        private System.Windows.Forms.ComboBox CBOX_MenuOptions;
         private System.Windows.Forms.ComboBox CBOX_LanguageOptions;
         private System.Windows.Forms.CheckBox CHK_DoNotTrack;
         private System.Windows.Forms.Label LBL_DoNotTrack;
         private System.Windows.Forms.Label LBL_DisplaySteamProfile;
-        private System.Windows.Forms.Label LBL_MainMenu;
         private System.Windows.Forms.Label LBL_GameLanguage;
         private System.Windows.Forms.Button BTN_GenerateConfig;
         private System.Windows.Forms.GroupBox GBOX_GameplaySettings;

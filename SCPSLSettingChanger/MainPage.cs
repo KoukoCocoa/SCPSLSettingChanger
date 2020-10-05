@@ -22,11 +22,6 @@ namespace SCPSLSettingChanger
             LoadValues();
         }
 
-        private void FRM_MainPage_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SaveValues();
-        }
-
         private void BTN_GenerateConfig_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SCP Secret Laboratory")))
@@ -63,11 +58,11 @@ namespace SCPSLSettingChanger
                     PlayerPrefsSl.Set("gfxsets_shadows", 0);
                     PlayerPrefsSl.Set("gfxsets_shadows", CHK_Shadows.Checked);
                 }
-                PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked ? 0 : 1);
+                PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked ? 1 : 0);
                 PlayerPrefsSl.Set("gfxsets_mb", CHK_MotionBlur.Checked);
                 PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked ? 1 : 0);
                 PlayerPrefsSl.Set("gfxsets_cc", CHK_ColorCorrection.Checked);
-                PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked ? 0 : 1);
+                PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked ? 1 : 0);
                 PlayerPrefsSl.Set("gfxsets_aa", CHK_AntiAliasing.Checked);
                 PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked ? 0 : 1);
                 PlayerPrefsSl.Set("gfxsets_hp", CHK_LightRenderingMode.Checked);
@@ -86,11 +81,9 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("PublicLobby", CHK_PublicLobby.Checked);
                 PlayerPrefsSl.Set("HideIP", CHK_HideIP.Checked);
                 PlayerPrefsSl.Set("ToggleSearch", CHK_ToggleSearch.Checked);
-                PlayerPrefsSl.Set("ModeSwitchSetting079", CHK_SCP079ToggleView.Checked);
-                PlayerPrefsSl.Set("PostProcessing079", CHK_SCP079EnablePostProcessing.Checked);
-                PlayerPrefsSl.Set("translation_changed", true);
+                PlayerPrefsSl.Set("ModeSwitchSetting", CHK_SCP079ToggleView.Checked);
+                PlayerPrefsSl.Set("PostProcessing", CHK_SCP079EnablePostProcessing.Checked);
                 PlayerPrefsSl.Set("translation_path", LanguageValues[CBOX_LanguageOptions.SelectedIndex]);
-                PlayerPrefsSl.Set("menumode", CBOX_MenuOptions.SelectedIndex);
                 PlayerPrefsSl.Set("DisplaySteamProfile", CHK_DisplaySteamProfile.Checked);
                 PlayerPrefsSl.Set("DNT", CHK_DoNotTrack.Checked);
                 PlayerPrefsSl.Set("W_2_0", CBOX_E11Sight.SelectedIndex);
@@ -109,6 +102,7 @@ namespace SCPSLSettingChanger
                 PlayerPrefsSl.Set("W_0_1", CBOX_COM15Barrel.SelectedIndex);
                 PlayerPrefsSl.Set("W_0_2", CBOX_COM15Other.SelectedIndex);
                 PlayerPrefsSl.Set("graphics_api", CBOX_GraphicsAPI.SelectedIndex);
+                PlayerPrefsSl.Refresh();
                 MessageBox.Show("SCP:SL game settings have been changed now!", "Successfully written new file", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -178,65 +172,6 @@ namespace SCPSLSettingChanger
             }
         }
 
-        private void SaveValues()
-        {
-            SCPSLSettingChanger.Properties.Settings.Default.ScreenResolutionChoice = CBOX_ScreenResolution.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.WindowModeChoice = CBOX_WindowMode.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.VSyncEnabled = CHK_VSync.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.FPSLimitChoice = CBOX_FPSLimit.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.TextureQualityChoice = CBOX_TextureQuality.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.MaxBloodAmountChoice = CBOX_MaxBlood.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.ShadowsEnabled = CHK_Shadows.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.ShadowResolutionChoice = CBOX_ShadowResolution.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.ShadowDistanceChoice = CBOX_ShadowDistance.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.MotionBlurEnabled = CHK_MotionBlur.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.ColorCorrectionEnabled = CHK_ColorCorrection.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.AntiAliasingEnabled = CHK_AntiAliasing.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.LightRenderingModeEnabled = CHK_LightRenderingMode.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.MasterVolumeValue = double.Parse(NUD_MasterVolume.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.SoundEffectsVolumeValue = double.Parse(NUD_SoundEffects.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.VoiceChatVolumeValue = double.Parse(NUD_VoiceChat.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.MenuMusicVolumeValue = double.Parse(NUD_MenuMusic.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.InterfaceVolumeValue = double.Parse(NUD_InterfaceVolume.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.SameMenuMusicAndInterfaceVolumeValueEnabled = CHK_SameMenuAndInterface.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.MenuThemeChoice = CBOX_MenuMusicTheme.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.LanguageChoice = CBOX_LanguageOptions.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.MainMenuChoice = CBOX_MenuOptions.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.DisplaySteamProfileEnabled = CHK_DisplaySteamProfile.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.DoNotTrackEnabled = CHK_DoNotTrack.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.DisplayExactHPValueEnabled = CHK_DisplayExactHPValue.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.FastIntroFadeEnabled = CHK_FastIntroFade.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.HeadBobEnabled = CHK_HeadBob.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.ToggleSprintEnabled = CHK_ToggleSprint.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.DisplayExactHPValueEnabled = CHK_DisplayExactHPValue.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.RichPresenceEnabled = CHK_RichPresence.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.PublicLobbyEnabled = CHK_PublicLobby.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.HideIPEnabled = CHK_HideIP.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.ToggleSearchEnabled = CHK_ToggleSearch.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.SCP079ToggleViewEnabled = CHK_SCP079ToggleView.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.SCP079EnablePostProcessingEnabled = CHK_SCP079EnablePostProcessing.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.BrightnessValue = double.Parse(NUD_Brightness.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.SensitivityValue = double.Parse(NUD_Sensitivty.Value.ToString());
-            SCPSLSettingChanger.Properties.Settings.Default.InvertYAxisEnabled = CHK_InvertYAxisChoice.Checked;
-            SCPSLSettingChanger.Properties.Settings.Default.E11SightChoice = CBOX_E11Sight.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.E11BarrelChoice = CBOX_E11Barrel.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.E11OtherChoice = CBOX_E11Other.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.Project90SightChoice = CBOX_Project90Sight.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.Project90BarrelChoice = CBOX_Project90Barrel.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.Project90OtherChoice = CBOX_Project90Other.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.MP7SightChoice = CBOX_MP7Sight.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.MP7BarrelChoice = CBOX_MP7Barrel.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.MP7OtherChoice = CBOX_MP7Other.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.USPSightChoice = CBOX_USPSight.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.USPBarrelChoice = CBOX_USPBarrel.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.USPOtherChoice = CBOX_MP7Other.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.COM15SightChoice = CBOX_COM15Sight.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.COM15BarrelChoice = CBOX_COM15Barrel.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.COM15OtherChoice = CBOX_COM15Other.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.GraphicsAPIChoice = CBOX_GraphicsAPI.SelectedIndex;
-            SCPSLSettingChanger.Properties.Settings.Default.Save();
-        }
-
         private void LoadValues()
         {
             CultureInfo OS = CultureInfo.CurrentUICulture;
@@ -265,60 +200,65 @@ namespace SCPSLSettingChanger
                 CBOX_ShadowResolution.Enabled = false;
                 CBOX_ShadowDistance.Enabled = false;
             }
-            CBOX_ScreenResolution.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.ScreenResolutionChoice;
-            CBOX_WindowMode.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.WindowModeChoice;
-            CHK_VSync.Checked = SCPSLSettingChanger.Properties.Settings.Default.VSyncEnabled;
-            CBOX_FPSLimit.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.FPSLimitChoice;
-            CBOX_TextureQuality.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.TextureQualityChoice;
-            CBOX_MaxBlood.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MaxBloodAmountChoice;
-            CHK_Shadows.Checked = SCPSLSettingChanger.Properties.Settings.Default.ShadowsEnabled;
-            CBOX_ShadowResolution.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.ShadowResolutionChoice;
-            CBOX_ShadowDistance.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.ShadowDistanceChoice;
-            CHK_MotionBlur.Checked = SCPSLSettingChanger.Properties.Settings.Default.MotionBlurEnabled;
-            CHK_ColorCorrection.Checked = SCPSLSettingChanger.Properties.Settings.Default.ColorCorrectionEnabled;
-            CHK_AntiAliasing.Checked = SCPSLSettingChanger.Properties.Settings.Default.AntiAliasingEnabled;
-            CHK_LightRenderingMode.Checked = SCPSLSettingChanger.Properties.Settings.Default.LightRenderingModeEnabled;
-            NUD_MasterVolume.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.MasterVolumeValue;
-            NUD_SoundEffects.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.SoundEffectsVolumeValue;
-            NUD_VoiceChat.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.VoiceChatVolumeValue;
-            NUD_MenuMusic.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.MenuMusicVolumeValue;
-            NUD_InterfaceVolume.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.InterfaceVolumeValue;
-            CHK_SameMenuAndInterface.Checked = SCPSLSettingChanger.Properties.Settings.Default.SameMenuMusicAndInterfaceVolumeValueEnabled;
-            CBOX_MenuMusicTheme.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MenuThemeChoice;
-            CBOX_LanguageOptions.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.LanguageChoice;
-            CBOX_MenuOptions.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MainMenuChoice;
-            CHK_DisplaySteamProfile.Checked = SCPSLSettingChanger.Properties.Settings.Default.DisplaySteamProfileEnabled;
-            CHK_DoNotTrack.Checked = SCPSLSettingChanger.Properties.Settings.Default.DoNotTrackEnabled;
-            CHK_DisplayExactHPValue.Checked = SCPSLSettingChanger.Properties.Settings.Default.DisplayExactHPValueEnabled;
-            CHK_FastIntroFade.Checked = SCPSLSettingChanger.Properties.Settings.Default.FastIntroFadeEnabled;
-            CHK_HeadBob.Checked = SCPSLSettingChanger.Properties.Settings.Default.HeadBobEnabled;
-            CHK_ToggleSprint.Checked = SCPSLSettingChanger.Properties.Settings.Default.ToggleSprintEnabled;
-            CHK_DisplayExactHPValue.Checked = SCPSLSettingChanger.Properties.Settings.Default.DisplayExactHPValueEnabled;
-            CHK_RichPresence.Checked = SCPSLSettingChanger.Properties.Settings.Default.RichPresenceEnabled;
-            CHK_PublicLobby.Checked = SCPSLSettingChanger.Properties.Settings.Default.PublicLobbyEnabled;
-            CHK_HideIP.Checked = SCPSLSettingChanger.Properties.Settings.Default.HideIPEnabled;
-            CHK_ToggleSearch.Checked = SCPSLSettingChanger.Properties.Settings.Default.ToggleSearchEnabled;
-            CHK_SCP079ToggleView.Checked = SCPSLSettingChanger.Properties.Settings.Default.SCP079ToggleViewEnabled;
-            CHK_SCP079EnablePostProcessing.Checked = SCPSLSettingChanger.Properties.Settings.Default.SCP079EnablePostProcessingEnabled;
-            NUD_Brightness.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.BrightnessValue;
-            NUD_Sensitivty.Value = (decimal)SCPSLSettingChanger.Properties.Settings.Default.SensitivityValue;
-            CHK_InvertYAxisChoice.Checked = SCPSLSettingChanger.Properties.Settings.Default.InvertYAxisEnabled;
-            CBOX_E11Sight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.E11SightChoice;
-            CBOX_E11Barrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.E11BarrelChoice;
-            CBOX_E11Other.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.E11OtherChoice;
-            CBOX_Project90Sight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.Project90SightChoice;
-            CBOX_Project90Barrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.Project90BarrelChoice;
-            CBOX_Project90Other.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.Project90OtherChoice;
-            CBOX_MP7Sight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MP7SightChoice;
-            CBOX_MP7Barrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MP7BarrelChoice;
-            CBOX_MP7Other.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.MP7OtherChoice;
-            CBOX_USPSight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.USPSightChoice;
-            CBOX_USPBarrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.USPBarrelChoice;
-            CBOX_USPOther.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.USPOtherChoice;
-            CBOX_COM15Sight.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.COM15SightChoice;
-            CBOX_COM15Barrel.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.COM15BarrelChoice;
-            CBOX_COM15Other.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.COM15OtherChoice;
-            CBOX_GraphicsAPI.SelectedIndex = SCPSLSettingChanger.Properties.Settings.Default.GraphicsAPIChoice;
+            int FrameRate = PlayerPrefsSl.Get("MaxFramerate", 0);
+            for (int i = 0; i < Framerates.Length; i++)
+            {
+                if (Framerates[i] == FrameRate)
+                {
+                    CBOX_FPSLimit.SelectedIndex = i;
+                    break;
+                }
+            }
+            CBOX_ScreenResolution.SelectedIndex = PlayerPrefsSl.Get("SavedResolutionSet", 0);
+            CBOX_WindowMode.SelectedIndex = PlayerPrefsSl.Get("ScreenMode", 0);
+            CHK_VSync.Checked = PlayerPrefsSl.Get("gfxsets_vsync", false);
+            CBOX_TextureQuality.SelectedIndex = PlayerPrefsSl.Get("gfxsets_textures", 0);
+            CBOX_MaxBlood.SelectedIndex = PlayerPrefsSl.Get("gfxsets_maxblood   ", 0);
+            CHK_Shadows.Checked = PlayerPrefsSl.Get("gfxsets_shadows", false);
+            CBOX_ShadowResolution.SelectedIndex = PlayerPrefsSl.Get("gfxsets_shadres", 0);
+            CBOX_ShadowDistance.SelectedIndex = PlayerPrefsSl.Get("gfxsets_shaddis_new", 0);
+            CHK_MotionBlur.Checked = PlayerPrefsSl.Get("gfxsets_mb", false);
+            CHK_ColorCorrection.Checked = PlayerPrefsSl.Get("gfxsets_cc", false);
+            CHK_AntiAliasing.Checked = PlayerPrefsSl.Get("gfxsets_aa", false);
+            CHK_LightRenderingMode.Checked = PlayerPrefsSl.Get("gfxsets_hp", false);
+            NUD_MasterVolume.Value = (decimal)PlayerPrefsSl.Get("AudioSettings_Master", 0f);
+            NUD_SoundEffects.Value = (decimal)PlayerPrefsSl.Get("AudioSettings_Effects", 0f);
+            NUD_VoiceChat.Value = (decimal)PlayerPrefsSl.Get("AudioSettings_VoiceChat", 0f);
+            NUD_MenuMusic.Value = (decimal)PlayerPrefsSl.Get("AudioSettings_MenuMusic", 0f);
+            NUD_InterfaceVolume.Value = (decimal)PlayerPrefsSl.Get("AudioSettings_Interface", 0f);
+            CHK_SameMenuAndInterface.Checked = PlayerPrefsSl.Get("MaintainSliderProportions", false);
+            CBOX_MenuMusicTheme.SelectedIndex = PlayerPrefsSl.Get("MenuTheme", 0);
+            CHK_DisplaySteamProfile.Checked = PlayerPrefsSl.Get("DisplaySteamProfile", false);
+            CHK_DoNotTrack.Checked = PlayerPrefsSl.Get("DNT", false);
+            CHK_DisplayExactHPValue.Checked = PlayerPrefsSl.Get("HealthBarShowsExact", false);
+            CHK_FastIntroFade.Checked = PlayerPrefsSl.Get("ClassIntroFastFade", false);
+            CHK_HeadBob.Checked = PlayerPrefsSl.Get("HeadBob", false);
+            CHK_ToggleSprint.Checked = PlayerPrefsSl.Get("ToggleSprint", false);
+            CHK_RichPresence.Checked = PlayerPrefsSl.Get("RichPresence", false);
+            CHK_PublicLobby.Checked = PlayerPrefsSl.Get("PublicLobby", false);
+            CHK_HideIP.Checked = PlayerPrefsSl.Get("HideIP", false);
+            CHK_ToggleSearch.Checked = PlayerPrefsSl.Get("ToggleSearch", false);
+            CHK_SCP079ToggleView.Checked = PlayerPrefsSl.Get("ModeSwitchSetting079", false);
+            CHK_SCP079EnablePostProcessing.Checked = PlayerPrefsSl.Get("PostProcessing079", false);
+            NUD_Brightness.Value = (decimal)PlayerPrefsSl.Get("gammavalue", 0f);
+            NUD_Sensitivty.Value = (decimal)PlayerPrefsSl.Get("Sens", 0f);
+            CHK_InvertYAxisChoice.Checked = PlayerPrefsSl.Get("y_invert", false);
+            CBOX_E11Sight.SelectedIndex = PlayerPrefsSl.Get("W_2_0", 0);
+            CBOX_E11Barrel.SelectedIndex = PlayerPrefsSl.Get("W_2_1", 0);
+            CBOX_E11Other.SelectedIndex = PlayerPrefsSl.Get("W_2_2", 0);
+            CBOX_Project90Sight.SelectedIndex = PlayerPrefsSl.Get("W_1_0", 0);
+            CBOX_Project90Barrel.SelectedIndex = PlayerPrefsSl.Get("W_1_1", 0);
+            CBOX_Project90Other.SelectedIndex = PlayerPrefsSl.Get("W_1_2", 0);
+            CBOX_MP7Sight.SelectedIndex = PlayerPrefsSl.Get("W_3_0", 0);
+            CBOX_MP7Barrel.SelectedIndex = PlayerPrefsSl.Get("W_3_1", 0);
+            CBOX_MP7Other.SelectedIndex = PlayerPrefsSl.Get("W_3_2", 0);
+            CBOX_USPSight.SelectedIndex = PlayerPrefsSl.Get("W_5_0", 0);
+            CBOX_USPBarrel.SelectedIndex = PlayerPrefsSl.Get("W_5_1", 0);
+            CBOX_USPOther.SelectedIndex = PlayerPrefsSl.Get("W_5_2", 0);
+            CBOX_COM15Sight.SelectedIndex = PlayerPrefsSl.Get("W_0_0", 0);
+            CBOX_COM15Barrel.SelectedIndex = PlayerPrefsSl.Get("W_0_1", 0);
+            CBOX_COM15Other.SelectedIndex = PlayerPrefsSl.Get("W_0_2", 0);
+            CBOX_GraphicsAPI.SelectedIndex = PlayerPrefsSl.Get("graphics_api", 0);
         }
     }
 }
